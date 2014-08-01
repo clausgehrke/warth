@@ -4,7 +4,7 @@
  *
  * @author        CLAGEH
  * @version       1.0.0
- *
+ * 
  */
 
 // theme constants
