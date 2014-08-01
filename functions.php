@@ -345,31 +345,49 @@ function process_custom_extra_value(){
 */
 
 
-function register_ip_field() {
-  $args = array(
-      'name' => 'werkname', // This will be the label of the field button in the back-end editor.
-      'display_function' => 'collect_user_ip_display', // This function will be called when the form is rendered on the front-end.
-      'sidebar' => 'template_fields', // This is the sidebar on the Field Settings tab that this field will show up in.
-      'display_label' => false, // Since we're adding a hidden form, we don't want to show the label on the front-end.
-      'display_wrap' => false, // Again, this is a hidden field, so we don't need the div wrapper that's normally output to the front-end.
-  );
-  
-  if( function_exists( 'ninja_forms_register_field' ) ) {
+/*
+ * Register Werk ID Form Field
+ */
+add_action( 'init', 'register_id_field' );
+function register_id_field() {
+  if ( function_exists( 'ninja_forms_register_field' ) ) {
+	  $args = array(
+		  'name' => 'werkname',
+		  'display_function' => 'collect_werk_id',
+		  'sidebar' => 'template_fields',
+		  'display_label' => false,
+		  'display_wrap' => false
+	  );
       ninja_forms_register_field('user_ip', $args);
   }
 }
-add_action( 'init', 'register_ip_field' );
+
 /*
- *  This function only has to output the specific field element. The wrap is output automatically.
- *  $field_id is the id of the field currently being displayed.
- *  $data is an array the possibly modified field data for the current field.
- *
-*/
-function collect_user_ip_display( $field_id, $data ){
-    // Get previous post ID.
-    $ip = get_the_title($_GET['id']);
-    ?>
-    <label><input type="checkbox" name="ninja_forms_field_<?php echo $field_id;?>" value="<?php echo $ip;?>">
-    Werkanfrage für "<?php echo $ip;?>"</label>
-      <?php
+ * Get Werk ID
+ */
+function collect_werk_id( $field_id, $data ) {
+	$id = $_GET['id'];
+	if ( $id ) : // check for id
+		$name = get_the_title( $id );
+		if ( $name ) : // check for existing post
+			echo '<label>';
+			echo '<input type="checkbox" name="ninja_forms_field_' . $field_id . '" value="' . $name . '">';
+			echo '<a href="' . get_permalink( $id ) . '">' . $name . '</a><br />';
+			_e('durch Kaufanfrage automatisch ausgewählt.', 'warth');
+            echo '</label>';
+		endif;
+		add_action( 'wp_footer', 'update_ninja_form_fields', 99 );
+	endif;
+}
+
+/*
+ * Default content in textarea
+ */
+function update_ninja_form_fields() {
+	$id = $_GET['id'];
+	$name = get_the_title( $id );
+	$js = '<script type="text/javascript">';
+	$js .= "$('.ninja-forms-form').find('textarea').val('" . __('Anfrage für Bild', 'warth') . " \"" . $name . "\"');";
+	$js .= '</script>';
+	echo $js;
 }
