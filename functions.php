@@ -391,3 +391,8 @@ function update_ninja_form_fields() {
 	$js .= '</script>';
 	echo $js;
 }
+
+// load admin functions
+if ( is_admin() ) {
+	include_once( 'functions-admin.php' );
+}
