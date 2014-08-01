@@ -60,7 +60,7 @@ endif;?>
   endforeach;
   echo  '</div>';
 endif;?>
-<?php/*Real Footer*/?>
+<?php /* Real Footer */ ?>
 	<div class="grid grid-pad footer">
   <div class="col-2-12">
     <div class="content copyright">
