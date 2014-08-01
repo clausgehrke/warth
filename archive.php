@@ -17,6 +17,13 @@ endif;
 					<div class="content">
 						<?php
 
+						$tax_slug = get_query_var( 'taxonomy' );
+						if ( $tax_slug ) :
+							echo '<a class="btn_black upper" href="' . home_url( '/'. $tax_slug . '/' ) . '">';
+								_e('Zurück', 'warth');
+							echo '</a>';
+						endif;
+
 						// category intro
 						echo '<h1>' . single_cat_title('' , false) . '</h1>';
 						echo category_description();

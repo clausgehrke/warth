@@ -543,6 +543,9 @@ h1 span {
   padding-right:2px; 
   background: url(img/rechteck_content.jpg) bottom right no-repeat;
 }
+.upper {
+	text-transform: uppercase;
+}
 
 /* TEASER */
 
@@ -780,6 +783,7 @@ nav a,
 /*BREADCRUMB*/
 #breadcrumb{
   padding: 10px;
+	text-transform: uppercase;
 }
 #breadcrumb a{
   color:#d70000;
@@ -827,6 +831,11 @@ a.btn_grey {
    padding: 5px 10px;
    background-color: #e7e7e7;
    color: #000000;
+}
+.btn_black {
+	padding: 5px 10px;
+	background-color: #000;
+	color: #fff;
 }
 .btn-back{
   position: relative;
@@ -1112,6 +1121,7 @@ width: 100% !important;
 .archive-postlist li {
 	float: left;
 	border: 1px solid #fff;
+	line-height: 0;
 }
 .archive-postlist li.active,
 .archive-postlist li:hover {
