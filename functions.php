@@ -277,14 +277,13 @@ function my_custom_post_werk() {
   );
   $args = array(
     'labels'        => $labels,
-    'description'   => 'Holds our products and product specific data',
+    'description'   => '',
     'public'        => true,
     'menu_position' => 5,
-    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+    'supports'      => array( 'title', 'editor', 'thumbnail' ),
     'has_archive'   => true,
     'capability_type' => 'post',
-//    'supports' => array('title','editor','thumbnail'),
-    'taxonomies' => array('werke')
+    'taxonomies' => array( 'werke' )
   );
   register_post_type( 'werk', $args ); 
 }
