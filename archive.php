@@ -19,23 +19,26 @@ get_header();
 
 						// category content overview
 						if ( have_posts() ) :
+							echo '<ul class="archive-postlist">';
 							while ( have_posts() ) : the_post();
 
-								echo '<ul class="archive-postlist">';
 								if ( has_post_thumbnail() ) :
 									echo '<li>';
-									the_post_thumbnail( 'thumbnail' );
+										echo '<a href="' . get_the_permalink() . '" title="' . get_the_title() . '" class="js_get-post">';
+											the_post_thumbnail( 'thumbnail' );
+										echo '</a>';
 									echo '</li>';
 								endif;
-								echo '</ul>';
 
 							endwhile;
+							echo '</ul>';
 						endif;
 
 						// category content
+						$cat = get_term_by( 'name', single_cat_title( '', false ), 'werke' );
 						$item_query = array(
 							'post_type' => 'werk',
-							'werke' => 'flying-triangles',
+							'werke' => $cat->slug,
 							'posts_per_page' => 1
 						);
 						$item = new WP_Query( $item_query );
@@ -44,13 +47,15 @@ get_header();
 
 								echo '<div class="archive-preview">';
 
-									the_title('<h1>', '</h1>');
+									the_title('<h1 class="js_title">', '</h1>');
 
-									the_content();
+									echo '<p class="js_content">'. get_the_content() .'</p>';
 
-									if ( has_post_thumbnail() ) :
-										the_post_thumbnail( 'medium' );
-									endif;
+									echo '<div class="js_image">';
+										if ( has_post_thumbnail() ) :
+											the_post_thumbnail( 'medium' );
+										endif;
+									echo '</div>';
 
 								echo '</div><!-- /.archive-preview -->';
 
