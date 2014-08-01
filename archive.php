@@ -19,13 +19,7 @@ endif;
 						<?php
 
 						// back link
-						$post_type = get_post_type_object( get_post_type() );
-						$tax_slug = $post_type->rewrite['slug'];
-						if ( $tax_slug ) :
-							echo '<a class="btn_black upper" href="' . home_url( '/'. $tax_slug . '/' ) . '">';
-								_e('Zurück', 'warth');
-							echo '</a>';
-						endif;
+						echo back_button();
 
 						// category intro
 						echo '<h1>' . single_cat_title('' , false) . '</h1>';

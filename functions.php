@@ -101,8 +101,9 @@ function scripts_enqueue() {
 }
 
 // add browser detection body class
-if ( ! function_exists( 'tdl_browser_body_class' ) ) {
-	function tdl_browser_body_class( $classes ) {
+if ( !function_exists( 'browser_body_class' ) ) {
+	add_filter( 'body_class', 'browser_body_class' );
+	function browser_body_class( $classes ) {
 		global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
 
 		if ( $is_lynx ) {
@@ -132,28 +133,27 @@ if ( ! function_exists( 'tdl_browser_body_class' ) ) {
 
 		return $classes;
 	}
-
-	add_filter( 'body_class', 'tdl_browser_body_class' );
 }
 
-// minify inline scripts
-
-// link for back button TODO: ZURÜCK button zb. in gallerie Detail
-function get_back_href() {
-	if ( isset($_SERVER['HTTP_REFERER']) )
-		$backurl = htmlspecialchars($_SERVER['HTTP_REFERER']); // get referer
-
-	if ( !empty($backurl) ) :
-		if (preg_match("/\bwarth-art.com\b/i", $backurl)) :
-			return 'href="' . esc_url( $backurl ) . '" title="' . __('Zurück', 'rosenthal') . '"';
-		else :
-			return 'href="' . esc_url( home_url( '/' ) ) . '" title="' . __('Zur Startseite', 'rosenthal') . '"';
-		endif;
-	else :
-		return 'href="' . esc_url( home_url( '/' ) ) . '" title="' . __('Zur Startseite', 'rosenthal') . '"';
+/*
+ * Back button
+ */
+function back_button() {
+	$post_type = get_post_type_object( get_post_type() );
+	$tax_slug = $post_type->rewrite['slug'];
+	$back = '';
+	if ( $tax_slug ) :
+		$back .= '<a class="btn_black upper" href="' . home_url( '/'. $tax_slug . '/' ) . '">';
+		$back .= __('Zurück', 'warth');
+		$back .= '</a>';
 	endif;
+
+	return $back;
 }
-/* Breadcrumb */
+
+/*
+ * Breadcrumbs
+ */
 function nav_breadcrumb() {
  
   $delimiter = '<span class="breadcrumb-divider"></span>';  
