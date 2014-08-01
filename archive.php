@@ -5,6 +5,7 @@
 
 get_header();
 
+// breadcrumbs
 if ( function_exists('nav_breadcrumb') ) :
 	nav_breadcrumb();
 endif;
@@ -17,6 +18,7 @@ endif;
 					<div class="content">
 						<?php
 
+						// back link
 						$tax_slug = get_query_var( 'taxonomy' );
 						if ( $tax_slug ) :
 							echo '<a class="btn_black upper" href="' . home_url( '/'. $tax_slug . '/' ) . '">';
