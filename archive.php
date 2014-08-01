@@ -5,6 +5,10 @@
 
 get_header();
 
+if ( function_exists('nav_breadcrumb') ) :
+	nav_breadcrumb();
+endif;
+
 ?>
 	<div class="grid main">
 		<div class="col-1-1">
