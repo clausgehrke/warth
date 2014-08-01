@@ -1,6 +1,6 @@
 <?php
 /**
- * setup (admin only)
+ * admin only
  */
 
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
