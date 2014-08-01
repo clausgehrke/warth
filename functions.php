@@ -168,7 +168,7 @@ function nav_breadcrumb() {
     global $post;
     $homeLink = get_bloginfo('url');
     echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
- 
+
     if ( is_category() ) {
       global $wp_query;
       $cat_obj = $wp_query->get_queried_object();
@@ -203,9 +203,11 @@ function nav_breadcrumb() {
       }
  
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
- 
+	    //
+	    $post_type = get_post_type_object( get_post_type() );
+	    $tax_slug = get_query_var( 'taxonomy' );
+	    echo '<a href="' . home_url( '/' . $tax_slug . '/' ) . '">' . $post_type->labels->name . '</a> ' . $delimiter . ' ';
+	    echo $before . single_cat_title( '', false ) . $after;
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
@@ -216,7 +218,7 @@ function nav_breadcrumb() {
     } elseif ( is_page() && !$post->post_parent ) {
       echo $before . get_the_title() . $after;
  
-    } elseif ( is_page() && $post->post_parent ) {
+    }  elseif ( is_page() && $post->post_parent ) {
       $parent_id  = $post->post_parent;
       $breadcrumbs = array();
       while ($parent_id) {
