@@ -24,7 +24,7 @@ get_header();
 
 								if ( has_post_thumbnail() ) :
 									echo '<li>';
-										echo '<a href="' . get_the_permalink() . '" title="' . get_the_title() . '" class="js_get-post">';
+										echo '<a href="' . get_the_permalink() . '" title="' . get_the_title() . '" class="js_get-post" data-id="' . get_the_ID() . '">';
 											the_post_thumbnail( 'thumbnail' );
 										echo '</a>';
 									echo '</li>';
@@ -56,6 +56,10 @@ get_header();
 											the_post_thumbnail( 'medium' );
 										endif;
 									echo '</div>';
+
+									echo '<a class="btn_red btn-cont-text js_contact" href="' . get_permalink( get_page_by_path( 'kontakt' ) ) . '?id=' . get_the_ID() . '">';
+										_e('Kaufanfrage', 'warth');
+									echo '</a>';
 
 								echo '</div><!-- /.archive-preview -->';
 

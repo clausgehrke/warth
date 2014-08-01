@@ -12,9 +12,14 @@ jQuery(document).ready(function ($) {
 	 */
 	$('.js_get-post').on('click', function () {
 		var href = $(this).attr('href'),
+			id = $(this).data('id'),
+			contact = $('.js_contact').attr('href').replace(/\d+/g, id);
 			load_content = [ '.js_title', '.js_content', '.js_image' ];
+		// interface
 		$('.archive-postlist li').removeClass('active');
 		$(this).parent().addClass('active');
+		$('.js_contact').attr('href', contact);
+		// loading
 		$('.archive-postlist').after('<div class="loading">Loading...</div>');
 		for ( var i = 0; i < load_content.length; i++ ) {
 			// fade out
