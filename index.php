@@ -59,10 +59,11 @@ endif;?>">
                 endif;
 
                 ?>
-            </div>
-        </div>
-	</div>
-</div>
+	            </div><!-- /.content -->
+            </div><!-- /.border_right -->
+        </div><!-- /.border_left -->
+	</div><!-- /.col-1-1 -->
+</div><!-- /.main -->
 <?php
 
 get_footer();
