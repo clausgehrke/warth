@@ -255,93 +255,75 @@ function nav_breadcrumb() {
     echo '</div>';
  }
 }
-/*post thumbnails*/
+
+/*
+ * Thumbnails
+ */
 add_theme_support( 'post-thumbnails' );
 
-/*Custom Post Types*/
-function my_custom_post_werk() {
-  $labels = array(
-    'name'               => _x( 'Werke', 'post type general name' ),
-    'singular_name'      => _x( 'Werk', 'post type singular name' ),
-    'add_new'            => _x( 'Neu hinzufügen', 'book' ),
-    'add_new_item'       => __( 'Neues Werk hinzufügen' ),
-    'edit_item'          => __( 'Werk bearbeiten' ),
-    'new_item'           => __( 'Neues Werk' ),
-    'all_items'          => __( 'Alle Werke' ),
-    'view_item'          => __( 'Werk ansehen' ),
-    'search_items'       => __( 'Werke suchen' ),
-    'not_found'          => __( 'keine Werke gefunden' ),
-    'not_found_in_trash' => __( 'keine Werke im Papierkorb' ), 
-    'parent_item_colon'  => '',
-    'menu_name'          => 'Werke'
-  );
-  $args = array(
-    'labels'        => $labels,
-    'description'   => '',
-    'public'        => true,
-    'menu_position' => 5,
-    'supports'      => array( 'title', 'editor', 'thumbnail' ),
-    'has_archive'   => true,
-    'capability_type' => 'post',
-    'taxonomies' => array( 'werke' )
-  );
-  register_post_type( 'werk', $args ); 
-}
-add_action( 'init', 'my_custom_post_werk' );
-
-
-/**
- * Add custom taxonomies
- *
- * Additional custom taxonomies can be defined here
- * http://codex.wordpress.org/Function_Reference/register_taxonomy
- */
-function add_custom_taxonomies() {
-  // Add new "Locations" taxonomy to Posts
-  register_taxonomy('werke', 'post', array(
-    // Hierarchical taxonomy (like categories)
-    'hierarchical' => true,
-    // This array of options controls the labels displayed in the WordPress Admin UI
-    'labels' => array(
-      'name' => _x( 'Werke Kategorie', 'taxonomy general name' ),
-      'singular_name' => _x( 'Werke', 'taxonomy singular name' ),
-      'search_items' =>  __( 'Search Kategorien' ),
-      'all_items' => __( 'Alle Werke' ),
-      'parent_item' => __( 'übergeordnetes Werk' ),
-      'parent_item_colon' => __( 'Parent werk:' ),
-      'edit_item' => __( 'Edit Werk Kategorie ' ),
-      'update_item' => __( 'Update Werk Kategorie ' ),
-      'add_new_item' => __( 'Neue Werk Kategorie hinzufügen' ),
-      'new_item_name' => __( 'neuer Kategoriename' ),
-      'menu_name' => __( 'Werke Kategorie' ),
-    ),
-    // Control the slugs used for this taxonomy
-    'rewrite' => array(
-      'slug' => 'werke', // This controls the base slug that will display before each term
-      'with_front' => false, // Don't display the category base before "/locations/"
-      'hierarchical' => true // This will allow URL's like "/werke/boston/cambridge/"
-    ),
-  ));
-}
-add_action( 'init', 'add_custom_taxonomies', 0 );
-
-/*Formular*/
 /*
-add_action( 'ninja_forms_display_after_fields', 'custom_extra_value' );
-function custom_extra_value(){
-  $werkname = is_numeric( ( $_GET['id'] ) );
-  ?>
-  <input type="checkbox" name="werkname" value="<?php echo $werkname;?>">
-  <?php
+ * Custom Post Types
+ */
+add_action( 'init', 'my_custom_post_werk' );
+function my_custom_post_werk() {
+    $labels = array(
+        'name'               => __( 'Werke', 'warth' ),
+        'singular_name'      => __( 'Werk', 'warth' ),
+        'add_new'            => __( 'Werk hinzufügen', 'warth' ),
+        'add_new_item'       => __( 'Neues Werk hinzufügen', 'warth' ),
+        'edit_item'          => __( 'Werk bearbeiten', 'warth' ),
+        'new_item'           => __( 'Neues Werk hinzufügen', 'warth' ),
+        'all_items'          => __( 'Alle Werke', 'warth' ),
+        'view_item'          => __( 'Werke ansehen', 'warth' ),
+        'search_items'       => __( 'Werke durchsuchen', 'warth' ),
+        'not_found'          => __( 'keine Werke gefunden', 'warth' ),
+        'not_found_in_trash' => __( 'Keine Werke im Papierkorb', 'warth' ),
+        'parent_item_colon'  => '',
+        'menu_name'          => 'Werke'
+    );
+    $args = array(
+        'labels'          => $labels,
+        'description'     => '',
+        'public'          => true,
+        'menu_position'   => 5,
+        'supports'        => array( 'title', 'editor', 'thumbnail' ),
+        'has_archive'     => true,
+        'capability_type' => 'post',
+        'taxonomies'      => array( 'werke' )
+    );
+    register_post_type( 'werk', $args );
 }
-add_action( 'ninja_forms_pre_process', 'process_custom_extra_value' );
-function process_custom_extra_value(){
-  global $ninja_forms_processing; // Required to make sure we're referencing the global variable.
-  $werkname = $ninja_forms_processing->get_extra_value( '_werk_name' ); // $ip is now populated with the user's IP.
-  // Do something with the ip address we just got.
-}
-*/
 
+/*
+ * Add custom taxonomies
+ */
+add_action( 'init', 'add_custom_taxonomies', 0 );
+function add_custom_taxonomies() {
+    register_taxonomy(
+	    'werke',
+	    'werk', array(
+            'hierarchical' => true,
+            'labels' => array(
+                'name' => __( 'Kategorien', 'warth' ),
+	            'singular_name' => __( 'Kategorie', 'warth' ),
+                'search_items' =>  __( 'Kategorien durchsuchen', 'warth' ),
+                'all_items' => __( 'Alle Kategorien', 'warth' ),
+                'parent_item' => __( 'übergeordnete Kategorien', 'warth' ),
+	            'parent_item_colon' => __( 'übergeordnete Kategorien:', 'warth' ),
+                'edit_item' => __( 'Kategorie bearbeiten', 'warth' ),
+                'update_item' => __( 'Kategorie aktualisieren', 'warth' ),
+	            'add_new_item' => __( 'Neue Kategorie hinzufügen', 'warth' ),
+                'new_item_name' => __( 'Neuer Kategoriename', 'warth' ),
+                'menu_name' => __( 'Kategorien', 'warth' ),
+            ),
+            'rewrite' => array(
+                'slug' => 'werke',
+                'with_front' => false,
+                'hierarchical' => true
+            ),
+	    )
+    );
+}
 
 /*
  * Register Werk ID Form Field
