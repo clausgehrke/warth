@@ -43,11 +43,18 @@ endif;?>">
 		<div class="border_left">
 			<div class="border_right">
         <div class="content">
-          <h1><?php the_title(); ?></h1>
-            <?php 
-            $page = get_page_by_title( get_the_title() );
-            $content = apply_filters('the_content', $page->post_content); 
-            echo $content;
+            <?php
+
+            the_title('<h1>', '</h1>');
+
+            if ( have_posts() ) :
+	            while ( have_posts() ) : the_post();
+
+		           the_content();
+
+	            endwhile;
+            endif;
+
             ?>
         </div>
       </div>
