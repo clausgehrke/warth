@@ -91,12 +91,7 @@ function scripts_enqueue() {
 		//LIGHTBOX http://osvaldas.info/examples/image-lightbox-responsive-touch-friendly
 		wp_register_script( 'imagelightbox', JS . '/imagelightbox.min.js', array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_script( 'imagelightbox' );
-		
-		// README: teil der navigation
-		wp_register_script( 'modernizer_custom', JSS . '/modernizr.custom.js', array( 'jquery' ), '1.0.0', true );
-		wp_enqueue_script( 'modernizer_custom' );
-		// README: teil des navi scripts die nach dem body kommen soll:
-		
+				
 		// Für Spezielle Seiten
 		// if ( is_page('home') || is_front_page() ) :
 		// 	wp_register_script( 'imagelightbox', JS . 'imagelightbox.min.js', array( 'jquery' ), '1.0.0', true );
@@ -325,6 +320,39 @@ function add_custom_taxonomies() {
   ));
 }
 add_action( 'init', 'add_custom_taxonomies', 0 );
+
+
+/*Custom Post Types*/
+function my_custom_post_werk() {
+  $labels = array(
+    'name'               => _x( 'Werke', 'post type general name' ),
+    'singular_name'      => _x( 'Werk', 'post type singular name' ),
+    'add_new'            => _x( 'Neu hinzufügen', 'book' ),
+    'add_new_item'       => __( 'Neues Werk hinzufügen' ),
+    'edit_item'          => __( 'Werk bearbeiten' ),
+    'new_item'           => __( 'Neues Werk' ),
+    'all_items'          => __( 'Alle Werke' ),
+    'view_item'          => __( 'Werk ansehen' ),
+    'search_items'       => __( 'Werke suchen' ),
+    'not_found'          => __( 'keine Werke gefunden' ),
+    'not_found_in_trash' => __( 'keine Werke im Papierkorb' ), 
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Werke'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Holds our products and product specific data',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+    'has_archive'   => true,
+    'capability_type' => 'post',
+//    'supports' => array('title','editor','thumbnail'),
+    'taxonomies' => array('werke')
+  );
+  register_post_type( 'werk', $args ); 
+}
+add_action( 'init', 'my_custom_post_werk' );
 
 
 /*Formular*/
