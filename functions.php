@@ -321,40 +321,6 @@ function add_custom_taxonomies() {
 }
 add_action( 'init', 'add_custom_taxonomies', 0 );
 
-
-/*Custom Post Types*/
-function my_custom_post_werk() {
-  $labels = array(
-    'name'               => _x( 'Werke', 'post type general name' ),
-    'singular_name'      => _x( 'Werk', 'post type singular name' ),
-    'add_new'            => _x( 'Neu hinzufügen', 'book' ),
-    'add_new_item'       => __( 'Neues Werk hinzufügen' ),
-    'edit_item'          => __( 'Werk bearbeiten' ),
-    'new_item'           => __( 'Neues Werk' ),
-    'all_items'          => __( 'Alle Werke' ),
-    'view_item'          => __( 'Werk ansehen' ),
-    'search_items'       => __( 'Werke suchen' ),
-    'not_found'          => __( 'keine Werke gefunden' ),
-    'not_found_in_trash' => __( 'keine Werke im Papierkorb' ), 
-    'parent_item_colon'  => '',
-    'menu_name'          => 'Werke'
-  );
-  $args = array(
-    'labels'        => $labels,
-    'description'   => 'Holds our products and product specific data',
-    'public'        => true,
-    'menu_position' => 5,
-    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
-    'has_archive'   => true,
-    'capability_type' => 'post',
-//    'supports' => array('title','editor','thumbnail'),
-    'taxonomies' => array('werke')
-  );
-  register_post_type( 'werk', $args ); 
-}
-add_action( 'init', 'my_custom_post_werk' );
-
-
 /*Formular*/
 /*
 add_action( 'ninja_forms_display_after_fields', 'custom_extra_value' );
