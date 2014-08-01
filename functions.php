@@ -143,7 +143,7 @@ function back_button() {
 	$tax_slug = $post_type->rewrite['slug'];
 	$back = '';
 	if ( $tax_slug ) :
-		$back .= '<a class="btn_black upper" href="' . home_url( '/'. $tax_slug . '/' ) . '">';
+		$back .= '<a class="btn_black upper push-right" href="' . home_url( '/'. $tax_slug . '/' ) . '">';
 		$back .= __('Zurück', 'warth');
 		$back .= '</a>';
 	endif;
