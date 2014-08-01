@@ -22,6 +22,12 @@ function custom_admin_styles() {
 	echo '</style>';
 }
 
+// remove default post type
+add_action('admin_menu','remove_default_post_type');
+function remove_default_post_type() {
+	remove_menu_page('edit.php');
+}
+
 // add custom post types to the dashboard
 add_action( 'dashboard_glance_items', 'custom_right_now_content_table_end' );
 function custom_right_now_content_table_end() {
