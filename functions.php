@@ -204,7 +204,7 @@ function nav_breadcrumb() {
  
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
 	    $post_type = get_post_type_object( get_post_type() );
-	    $tax_slug = get_query_var( 'taxonomy' );
+	    $tax_slug = $post_type->rewrite['slug'];
 	    if ( $tax_slug ) {
 	    echo '<a href="' . home_url( '/' . $tax_slug . '/' ) . '">' . $post_type->labels->name . '</a> ' . $delimiter . ' ';
 	    echo $before . single_cat_title( '', false ) . $after;
