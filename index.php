@@ -6,7 +6,9 @@
  * @version       1.0.0
  *
  */
+
 get_header();
+
 $show_slider      = rwmb_meta( 'wa_show_slider' );
 $slider_images    = rwmb_meta( 'wa_slider_images', 'type=image&size=slider-image');
 $slider_frame     = rwmb_meta( 'wa_slider_frame' );
@@ -14,8 +16,9 @@ $show_teaser      = rwmb_meta( 'wa_show_teaser' );
 $teaser_images    = rwmb_meta( 'wa_teaser_images', 'type=image&size=full');
 $teaser_headline  = rwmb_meta( 'wa_teaser_headline' );
 $teaser_link      = rwmb_meta( 'wa_teaser_link' );
+
+if ($show_slider) :
 ?>
-<?php if ($show_slider) :?>
 <div class="grid grid-pad slider <?php if ($slider_frame) :
   echo 'frame';
 endif;?>">
@@ -42,28 +45,24 @@ endif;?>">
 	<div class="col-1-1">
 		<div class="border_left">
 			<div class="border_right">
-        <div class="content">
-            <?php
+                <div class="content">
+                <?php
 
-            the_title('<h1>', '</h1>');
+                the_title('<h1>', '</h1>');
 
-            if ( have_posts() ) :
-	            while ( have_posts() ) : the_post();
+                if ( have_posts() ) :
+	                while ( have_posts() ) : the_post();
 
-		           the_content();
+		                the_content();
 
-	            endwhile;
-            endif;
+	                endwhile;
+                endif;
 
-            ?>
+                ?>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+	</div>
 </div>
-
- 
-<!--/main + Teaser-->
 <?php
-/*get_sidebar();*/
+
 get_footer();
