@@ -32,14 +32,16 @@
 // TODO: Teaser Bilder werden noch nicht eingebunden
     echo '<div class="grid grid-pad teaser">';
     $i = 0;
-    foreach ( $teaser_headlines as $teaser_headline ) :
-    echo '<div class="col-4-12 teaser-item">';
-      echo '<h3>'. $teaser_headline .'</h3>';   
-      echo '<img class="trans-m" src="' . $teaser_images['url'] . '" alt="' . $teaser_images['alt'] . '" />';
-      echo '<a href="'. $teaser_link[$i] .'" class="btn_red btn-teaser">Mehr</a>';
-    echo '</div>';
-    $i++;
-    endforeach;
+	if ( $teaser_headlines ) :
+        foreach ( $teaser_headlines as $teaser_headline ) :
+            echo '<div class="col-4-12 teaser-item">';
+            echo '<h3>'. $teaser_headline .'</h3>';
+            echo '<img class="trans-m" src="' . $teaser_images['url'] . '" alt="' . $teaser_images['alt'] . '" />';
+            echo '<a href="'. $teaser_link[$i] .'" class="btn_red btn-teaser">Mehr</a>';
+	        echo '</div>';
+            $i++;
+        endforeach;
+	endif;
     echo  '</div>';
 endif;?>
 <?php if ($show_teaser) : 
