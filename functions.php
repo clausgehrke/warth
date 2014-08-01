@@ -206,8 +206,12 @@ function nav_breadcrumb() {
 	    //
 	    $post_type = get_post_type_object( get_post_type() );
 	    $tax_slug = get_query_var( 'taxonomy' );
+	    if ( $tax_slug ) {
 	    echo '<a href="' . home_url( '/' . $tax_slug . '/' ) . '">' . $post_type->labels->name . '</a> ' . $delimiter . ' ';
 	    echo $before . single_cat_title( '', false ) . $after;
+	    } else {
+		    echo $before . $post_type->labels->singular_name . $after;
+	    }
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
