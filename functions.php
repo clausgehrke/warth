@@ -49,7 +49,6 @@ if ( function_exists( 'add_image_size' ) ) {
 
 // register nav menus
 register_nav_menus( array(
-	'splash' => __( 'Splashnavigation', 'warth' ),
 	'main' => __( 'Hauptnavigation', 'warth' )
 ) );
 
