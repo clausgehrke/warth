@@ -266,6 +266,11 @@ function nav_breadcrumb() {
 add_theme_support( 'post-thumbnails' );
 
 /*
+ * Post Formats
+ */
+add_theme_support( 'post-formats', array( 'image', 'video' ) );
+
+/*
  * Custom Post Types
  */
 add_action( 'init', 'my_custom_post_werk' );
@@ -290,7 +295,7 @@ function my_custom_post_werk() {
         'description'     => '',
         'public'          => true,
         'menu_position'   => 5,
-        'supports'        => array( 'title', 'editor', 'thumbnail' ),
+        'supports'        => array( 'title', 'editor', 'thumbnail', 'post-formats' ),
         'has_archive'     => true,
         'capability_type' => 'post',
         'taxonomies'      => array( 'werke' )
@@ -312,8 +317,8 @@ function add_custom_taxonomies() {
 	            'singular_name' => __( 'Kategorie', 'warth' ),
                 'search_items' =>  __( 'Kategorien durchsuchen', 'warth' ),
                 'all_items' => __( 'Alle Kategorien', 'warth' ),
-                'parent_item' => __( 'übergeordnete Kategorien', 'warth' ),
-	            'parent_item_colon' => __( 'übergeordnete Kategorien:', 'warth' ),
+                'parent_item' => __( 'Übergeordnete Kategorien', 'warth' ),
+	            'parent_item_colon' => __( 'Übergeordnete Kategorien:', 'warth' ),
                 'edit_item' => __( 'Kategorie bearbeiten', 'warth' ),
                 'update_item' => __( 'Kategorie aktualisieren', 'warth' ),
 	            'add_new_item' => __( 'Neue Kategorie hinzufügen', 'warth' ),

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Warth 1.0.0\n"
-"POT-Creation-Date: 2014-08-03 23:48+0100\n"
-"PO-Revision-Date: 2014-08-03 23:48+0100\n"
+"POT-Creation-Date: 2014-08-04 00:36+0100\n"
+"PO-Revision-Date: 2014-08-04 00:36+0100\n"
 "Last-Translator: Sven Hofmann <info@hofmannsven.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -43,115 +43,103 @@ msgstr " <a href=\"%s\" target=\"_blank\">Sven Hofmann</a>"
 msgid " <a href=\"%s\" target=\"_blank\">Claus Gehrke</a>"
 msgstr " <a href=\"%s\" target=\"_blank\">Claus Gehrke</a>"
 
-#: functions.php:28
-msgid "Vorname"
-msgstr "First name"
-
-#: functions.php:29
-msgid "Anfrage Absenden"
-msgstr "Send Request"
-
-#: functions.php:58
-msgid "Splashnavigation"
-msgstr ""
-
-#: functions.php:59
+#: functions.php:52
 msgid "Hauptnavigation"
-msgstr ""
+msgstr "Main navigation"
 
-#: functions.php:158
+#: functions.php:151
 msgid "Zurück"
 msgstr "Back"
 
-#: functions.php:262
+#: functions.php:255
 msgid "Page"
 msgstr ""
 
-#: functions.php:281
+#: functions.php:279 functions.php:291
 msgid "Werke"
 msgstr "Creations"
 
-#: functions.php:282
+#: functions.php:280
 msgid "Werk"
 msgstr "Creation"
 
-#: functions.php:283
+#: functions.php:281
 msgid "Werk hinzufügen"
 msgstr "Add creation"
 
-#: functions.php:284 functions.php:286
+#: functions.php:282 functions.php:284
 msgid "Neues Werk hinzufügen"
 msgstr "Add new creation"
 
-#: functions.php:285
+#: functions.php:283
 msgid "Werk bearbeiten"
 msgstr "Edit creation"
 
-#: functions.php:287
+#: functions.php:285
 msgid "Alle Werke"
 msgstr "All creations"
 
-#: functions.php:288
+#: functions.php:286
 msgid "Werke ansehen"
 msgstr "View creation"
 
-#: functions.php:289
+#: functions.php:287
 msgid "Werke durchsuchen"
 msgstr "Search creation"
 
-#: functions.php:290
+#: functions.php:288
 msgid "keine Werke gefunden"
 msgstr "No creation found"
 
-#: functions.php:291
+#: functions.php:289
 msgid "Keine Werke im Papierkorb"
 msgstr "No creation found in trash"
 
-#: functions.php:318 functions.php:328
+#: functions.php:316 functions.php:326
 msgid "Kategorien"
 msgstr "Categories"
 
-#: functions.php:319
+#: functions.php:317
 msgid "Kategorie"
 msgstr "Category"
 
-#: functions.php:320
+#: functions.php:318
 msgid "Kategorien durchsuchen"
 msgstr "Search category"
 
-#: functions.php:321
+#: functions.php:319
 msgid "Alle Kategorien"
 msgstr "All categories"
 
-#: functions.php:322
-msgid "übergeordnete Kategorien"
+#: functions.php:320
+msgid "Übergeordnete Kategorien"
 msgstr "Parent categories"
 
-#: functions.php:323
-msgid "übergeordnete Kategorien:"
+#: functions.php:321
+msgid "Übergeordnete Kategorien:"
 msgstr "Parent categories:"
 
-#: functions.php:324
+#: functions.php:322
 msgid "Kategorie bearbeiten"
 msgstr "Edit category"
 
-#: functions.php:325
+#: functions.php:323
 msgid "Kategorie aktualisieren"
 msgstr "Update category"
 
-#: functions.php:326
+#: functions.php:324
 msgid "Neue Kategorie hinzufügen"
 msgstr "Add new category"
 
-#: functions.php:327
+#: functions.php:325
 msgid "Neuer Kategoriename"
 msgstr "New category name"
 
-#: functions.php:367
+#: functions.php:365
 msgid "durch Kaufanfrage automatisch ausgewählt."
 msgstr "selected automatically by purchase request."
 
-#: functions.php:381
+#: functions.php:379
 msgid "Anfrage für Bild"
 msgstr "Request for Image"
 
@@ -419,3 +407,42 @@ msgstr ""
 #: inc/meta_box_slider.php:152
 msgid "bitte noch nichts eintragen"
 msgstr ""
+
+#~ msgid "Formate"
+#~ msgstr "Container"
+
+#~ msgid "Format"
+#~ msgstr "Container"
+
+#~ msgid "Formate durchsuchen"
+#~ msgstr "Search container"
+
+#~ msgid "Alle Formate"
+#~ msgstr "All container"
+
+#~ msgid "Übergeordnete Formate"
+#~ msgstr "Parent container"
+
+#~ msgid "Übergeordnete Formate:"
+#~ msgstr "Parent container:"
+
+#~ msgid "Format bearbeiten"
+#~ msgstr "Edit container"
+
+#~ msgid "Format aktualisieren"
+#~ msgstr "Update container"
+
+#~ msgid "Neues Format hinzufügen"
+#~ msgstr "Add new container"
+
+#~ msgid "Neuer Formatname"
+#~ msgstr "New container name"
+
+#~ msgid "Formen"
+#~ msgstr "Shapes"
+
+#~ msgid "Vorname"
+#~ msgstr "First name"
+
+#~ msgid "Anfrage Absenden"
+#~ msgstr "Send Request"
