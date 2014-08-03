@@ -210,6 +210,9 @@ padding-right:20px
    float: right;
    padding-right: 20px
 }
+.last {
+	padding-right: 0;
+}
 .col-1-1 {
    width: 100%
 }
@@ -1116,6 +1119,11 @@ width: 100% !important;
   background: url(img/slider-prev.png) 90% 50% no-repeat;
 }
 
+/* language switcher */
+.language .flag {
+	padding-left: 30px;
+	background-position: 0px 2px;
+}
 
 /* archive */
 .archive-postlist li {

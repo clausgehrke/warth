@@ -28,10 +28,35 @@
       <img alt="Warth Logo" src="<?php echo IMG; ?>/warthlogo.png">
     </a>
   </div>
-  <div class="col-8-12">
+  <div class="col-8-12 last">
     <div class="mobil-menu-button"><span></span></div>
     <div class="meta-nav">
-      <?php wp_nav_menu( array('menu' => 'metamenu' ) ); ?>
+      <?php
+
+		// prepare language switcher
+        if ( qtrans_getLanguage() == 'en' ) :
+	        $lang = '<li class="language">';
+	        $lang .= '<a class="flag qtrans_flag_de" href="' . qtrans_convertURL(get_permalink(), 'de') . '" title="' . __('German', 'warth') . '">';
+	        $lang .= __('German', 'warth');
+	        $lang .= '</a>';
+	        $lang .= '</li>';
+        else:
+	        $lang = '<li class="language">';
+	        $lang .= '<a class="flag qtrans_flag_en" href="' . qtrans_convertURL(get_permalink(), 'en') . '" title="' . __('Englisch', 'warth') . '">';
+	        $lang .= __('Englisch', 'warth');
+	        $lang .= '</a>';
+	        $lang .= '</li>';
+        endif;
+
+        // meta nav with language switcher
+        wp_nav_menu(
+	        array(
+		        'menu' => 'metamenu',
+		        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s' . $lang . '</ul>'
+	        )
+        );
+
+      ?>
     </div>
   </div>
   <div class="mainnav col-1-1">
