@@ -17,6 +17,11 @@ define( 'CSS', THEME . '/css' );
 define( 'IMG', THEME . '/img' );
 require_once( FUNCTIONS . 'inc/meta_box_slider.php' );
 
+// prepare for localization
+add_action( 'after_setup_theme', 'warth_theme_setup' );
+function warth_theme_setup(){
+	load_theme_textdomain( 'warth', get_template_directory() . '/languages' );
+}
 
 // remove unnecessary header info
 add_action( 'init', 'remove_header_info' );

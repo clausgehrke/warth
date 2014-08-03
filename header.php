@@ -37,7 +37,7 @@
         if ( qtrans_getLanguage() == 'en' ) :
 	        $lang = '<li class="language">';
 	        $lang .= '<a class="flag qtrans_flag_en" href="' . qtrans_convertURL( home_url( '/' ), 'de' ) . '" title="' . __('English', 'warth') . '">';
-	        $lang .= __('English', 'warth');
+	        $lang .= __('Englisch', 'warth');
 	        $lang .= '</a>';
 	        $lang .= '</li>';
         else:
