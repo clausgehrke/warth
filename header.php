@@ -36,14 +36,14 @@
 		// prepare language switcher
         if ( qtrans_getLanguage() == 'en' ) :
 	        $lang = '<li class="language">';
-	        $lang .= '<a class="flag qtrans_flag_de" href="' . qtrans_convertURL(get_permalink(), 'de') . '" title="' . __('German', 'warth') . '">';
-	        $lang .= __('German', 'warth');
+	        $lang .= '<a class="flag qtrans_flag_en" href="' . qtrans_convertURL( home_url( '/' ), 'de' ) . '" title="' . __('English', 'warth') . '">';
+	        $lang .= __('English', 'warth');
 	        $lang .= '</a>';
 	        $lang .= '</li>';
         else:
 	        $lang = '<li class="language">';
-	        $lang .= '<a class="flag qtrans_flag_en" href="' . qtrans_convertURL(get_permalink(), 'en') . '" title="' . __('Englisch', 'warth') . '">';
-	        $lang .= __('Englisch', 'warth');
+	        $lang .= '<a class="flag qtrans_flag_de" href="' . qtrans_convertURL( home_url( '/' ), 'en' ) . '" title="' . __('Deutsch', 'warth') . '">';
+	        $lang .= __('Deutsch', 'warth');
 	        $lang .= '</a>';
 	        $lang .= '</li>';
         endif;
