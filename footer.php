@@ -61,22 +61,20 @@ endif;?>
   echo  '</div>';
 endif;?>
 <?php /* Real Footer */ ?>
-	<div class="grid grid-pad footer">
-  <div class="col-2-12">
+
+<div class="grid grid-pad footer">
+  <div class="col-1-2">
     <div class="content copyright">
       <p>© 2014 WARTH</p>
     </div>
   </div>
-  <div class="col-8-12">
-    <br/>  
-  </div>
-  <div class="col-2-12">
+  <div class="col-1-2">
     <div class="content impressum">
       <?php wp_nav_menu( array('menu' => 'footermenu' ) ); ?>
-      
     </div>
   </div>
 </div>
+
 <!-- TODO:delete Mobil navi 
 <script src="<?php get_template_directory_uri(); ?>/jss/classie.js"></script>
 <script src=" <?php get_template_directory_uri(); ?>/jss/mlpushmenu.js"></script>
