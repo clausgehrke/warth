@@ -8,6 +8,13 @@ jQuery(document).ready(function ($) {
 	});
 
 	/*
+	 * cycle slideshow
+	 */
+	$('.cycle-slideshow').cycle({
+		'log': false
+	});
+
+	/*
 	 * load images
 	 */
 	$('.js_get-post').on('click', function () {
