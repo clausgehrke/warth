@@ -283,7 +283,7 @@ function my_custom_post_werk() {
         'not_found'          => __( 'keine Werke gefunden', 'warth' ),
         'not_found_in_trash' => __( 'Keine Werke im Papierkorb', 'warth' ),
         'parent_item_colon'  => '',
-        'menu_name'          => 'Werke'
+        'menu_name'          => __( 'Werke', 'warth' )
     );
     $args = array(
         'labels'          => $labels,
