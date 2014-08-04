@@ -17,15 +17,19 @@ function remove_dashboard_widgets() {
 add_action( 'admin_head', 'custom_admin_styles' );
 function custom_admin_styles() {
 	echo '<style type="text/css">';
-	echo '#dashboard_right_now .post-count { display: none; }';
-	// echo '#dashboard_right_now .werk-count a:before { content: \'\f230\'; }';
+	// echo '#dashboard_right_now .post-count { display: none; }';
 	echo '</style>';
 }
 
-// remove default post type
-add_action('admin_menu','remove_default_post_type');
-function remove_default_post_type() {
-	remove_menu_page('edit.php');
+// change post label only: http://revelationconcept.com/wordpress-rename-default-posts-news-something-else/
+add_action( 'admin_menu', 'warth_change_post_label' );
+function warth_change_post_label() {
+	global $menu;
+	global $submenu;
+	$menu[5][0] = __('Aktuelles', 'warth');
+	$submenu['edit.php'][5][0] = __('Aktuelles', 'warth');
+	$submenu['edit.php'][10][0] = __('Beitrag hinzufügen', 'warth');
+	echo '';
 }
 
 // add custom post types to the dashboard

@@ -1,15 +1,9 @@
 <?php
-/**
- * The template for displaying the footer
- *
- * Contains footer content and the closing of the #main and #page div elements.
- *
- * @package WordPress
- * @subpackage warth
- * @since Twenty Fourteen 1.0
+/*
+ * footer
  */
 ?>
-	<?php wp_footer(); ?>
+
 
   <?php 
   $show_standardteaser = rwmb_meta( 'wa_show_standardteaser' );
@@ -62,25 +56,22 @@ endif;?>
 endif;?>
 <?php /* Real Footer */ ?>
 
-<div class="grid grid-pad footer">
-  <div class="col-1-2">
-    <div class="content copyright">
-      <p>© 2014 WARTH</p>
-    </div>
-  </div>
-  <div class="col-1-2">
-    <div class="content impressum">
-      <?php wp_nav_menu( array('menu' => 'footermenu' ) ); ?>
-    </div>
-  </div>
-</div>
+<div class="footer">
+	<div class="grid grid-pad">
+        <div class="col-1-2">
+            <div class="copyright">
+                <p>© <?php echo date( 'Y' ); ?> WARTH</p>
+            </div><!-- /.copyright -->
+        </div><!-- /.col-1-2 -->
+        <div class="col-1-2 last">
+            <div class="impressum">
+                <?php wp_nav_menu( array('menu' => 'footermenu' ) ); ?>
+            </div><!-- /.impressum -->
+        </div><!-- /.col-1-2 -->
+	</div><!-- /.grid -->
+</div><!-- /.footer -->
 
-<!-- TODO:delete Mobil navi 
-<script src="<?php get_template_directory_uri(); ?>/jss/classie.js"></script>
-<script src=" <?php get_template_directory_uri(); ?>/jss/mlpushmenu.js"></script>
-<script>
-  new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
-</script> -->
+<?php wp_footer(); ?>
+
 </body>
-
 </html>
