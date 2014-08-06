@@ -64,6 +64,10 @@ function css_enqueue() {
 		wp_register_style( 'simpleGrid', CSS . '/simpleGrid.css', array( 'rosenthal' ), '1.0.0', 'all' );
 		wp_enqueue_style( 'simpleGrid' );
 	endif;*/
+  if ( is_post_type_archive() || is_page()) :
+    wp_register_style( 'flexslidercss', CSS . '/flexslider.css', array( 'warth' ), '1.0.0', 'all' );
+    wp_enqueue_style( 'flexslidercss' );
+  endif;
 }
 
 // frontend enqueue scripts
@@ -74,7 +78,7 @@ function scripts_enqueue() {
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', JS . '/jquery.min.js', array(), '1.11.0', true );
 		wp_enqueue_script( 'jquery' );
-    
+    // TODO: add Modernizer
     wp_register_script( 'functions', JS . '/functions.js', array( 'jquery' ), '1.0.0', true );
     wp_enqueue_script( 'functions' );
 		// only on single product pages
@@ -82,25 +86,17 @@ function scripts_enqueue() {
 			wp_register_script( 'detail', JS . '/detail.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_script( 'detail' );
 		endif;*/
-
-		//TODO: Slider prev und next fehlt
-		//SLIDESHOW ALTERNATIVE http://flexslider.woothemes.com/index.html
-		
-		//SLIDESHOW http://jquery.malsup.com/cycle2/demo/
-		wp_register_script( 'cycle', JS . '/jquery.cycle2.js', array( 'jquery' ), '1.0.0', true );
-		wp_enqueue_script( 'cycle' );
-		wp_register_script( 'carousel', JS . '/plugin/jquery.cycle2.carousel.min.js', array( 'jquery' ), '1.0.0', true );
-		wp_enqueue_script( 'carousel' );
-
-		//LIGHTBOX http://osvaldas.info/examples/image-lightbox-responsive-touch-friendly
-		wp_register_script( 'imagelightbox', JS . '/imagelightbox.min.js', array( 'jquery' ), '1.0.0', true );
-		wp_enqueue_script( 'imagelightbox' );
 				
 		// Für Spezielle Seiten
-		// if ( is_page('home') || is_front_page() ) :
-		// 	wp_register_script( 'imagelightbox', JS . 'imagelightbox.min.js', array( 'jquery' ), '1.0.0', true );
-		// 	wp_enqueue_script( 'imagelightbox' );
-		// endif;
+    if ( is_post_type_archive() || is_page()) :
+      wp_register_script( 'flexslider', JS . '/jquery.flexslider.js', array( 'jquery' ), '1.0.0', true );
+      wp_enqueue_script( 'flexslider' );
+      wp_register_script( 'jqueryeasing', JS . '/jquery.easing.js', array( 'jquery' ), '1.0.0', true );
+      wp_enqueue_script( 'jqueryeasing' );
+      wp_register_script( 'jquerymousewheel', JS . '/jquery.mousewheel.js', array( 'jquery' ), '1.0.0', true );
+      wp_enqueue_script( 'jquerymousewheel' );
+    endif;
+
 	endif;
 }
 
@@ -302,6 +298,43 @@ function my_custom_post_werk() {
     );
     register_post_type( 'werk', $args );
 }
+
+
+/*
+ * Custom Post Types Atilier
+ */
+
+add_action( 'init', 'my_custom_post_atelier' );
+function my_custom_post_atelier() {
+    $labels = array(
+        'name'               => __( 'Atelier', 'warth' ),
+        'singular_name'      => __( 'Atelier', 'warth' ),
+        'add_new'            => __( 'Atelierbild hinzufügen', 'warth' ),
+        'add_new_item'       => __( 'Neues Atelierbild hinzufügen', 'warth' ),
+        'edit_item'          => __( 'Atelierbild bearbeiten', 'warth' ),
+        'new_item'           => __( 'Neues Atelier hinzufügen', 'warth' ),
+        'all_items'          => __( 'Alle Atelierbilder', 'warth' ),
+        'view_item'          => __( 'Atelierbilder ansehen', 'warth' ),
+        'search_items'       => __( 'Atelier durchsuchen', 'warth' ),
+        'not_found'          => __( 'keine  Atelierbilder gefunden', 'warth' ),
+        'not_found_in_trash' => __( 'Keine Atelierbilder im Papierkorb', 'warth' ),
+        'parent_item_colon'  => '',
+        'menu_name'          => 'Atelier'
+    );
+    $args = array(
+        'labels'          => $labels,
+        'description'     => '',
+        'public'          => true,
+        'menu_position'   => 5,
+        'supports'        => array( 'title', 'editor', 'thumbnail' ),
+        'has_archive'     => true,
+        'capability_type' => 'post',
+        'taxonomies'      => array( 'werke' )
+    );
+    register_post_type( 'atelier', $args );
+}
+
+
 
 /*
  * Add custom taxonomies

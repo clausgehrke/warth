@@ -12,26 +12,44 @@ $teaser_headline  = rwmb_meta( 'wa_teaser_headline' );
 $teaser_link      = rwmb_meta( 'wa_teaser_link' );
 
 if ( $show_slider ) :
-
 ?>
-<div class="grid grid-pad slider <?php if ($slider_frame) { echo 'frame'; } ?>">
-	<div class="col-1-1" style="height:350px">
-		<div class="cycle-slideshow" data-cycle-prev=".cycle-prev" data-cycle-next=".cycle-next">
-			<?php
+<div class="grid slider <?php if ($slider_frame) :
+  echo 'frame';
+endif;?>">
+  <div class="col-1-1">
 
-				$i = 0;
-				foreach ( $slider_images as $image ) :
-					echo '<img src="' . $image['url'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '" alt="' . $image['alt'] . '" />';
-					$i++;
-				endforeach;
-				if ($i >= 2):
-					echo '<div class="cycle-prev trans-f"></div><div class="cycle-next trans-f"></div>';
-				endif;
+<div class="flexslider headerslider">
+    <ul class="slides">
+    <?php
+      foreach ( $slider_images as $image ) :
+        echo '<li>';
+        echo '<img src="' . $image['url'] . '" width="' . $image['width'] . '" height="auto" alt="' . $image['alt'] . '" />';
+        echo '</li>';
+      endforeach;
+      ?>
+    </ul>
+</div>
 
-			?>
-		</div><!-- /.cycle-slideshow -->
-	</div><!-- /.col-1-1 -->
-</div><!-- /.grid -->
+<?php /* ?>
+Alte Slide show
+    <div class="cycle-slideshow" data-cycle-prev=".cycle-prev"
+        data-cycle-next=".cycle-next">
+      <?php
+      $i = 0;  
+      foreach ( $slider_images as $image ) :
+        echo '<img src="' . $image['url'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '" alt="' . $image['alt'] . '" />';
+        $i++;
+      endforeach;
+      if ($i >= 2):
+        echo '<div class="cycle-prev trans-f"></div><div class="cycle-next trans-f"></div>';
+      endif;
+      ?>
+    </div>
+<?php */ ?>
+
+  </div>
+</div>
+
 <?php
 
 endif; // end of $show_slider

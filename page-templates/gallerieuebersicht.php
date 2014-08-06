@@ -42,34 +42,31 @@ get_header();
     </div>
   </div>
 </div>
-
-<div class="grid grid-pad main">
-  <div class="col-5-12">
-    <div class="border_left">
-      <div class="content galimg">
-        <img src="<?php echo IMG; ?>/galueb.png">
-        <div class="galslider">
-          <a><img src="<?php echo IMG; ?>/thumb1.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb2.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb3.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb2.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb3.png"></a>
-        </div> 
+  <div class="grid grid-pad main">
+    <div class="col-5-12">
+      <div class="border_left">
+        <div class="content galimg">
+          <img src="<?php echo IMG; ?>/galueb.png">
+          <div class="galslider">
+            <a><img src="<?php echo IMG; ?>/thumb1.png"></a>
+            <a><img src="<?php echo IMG; ?>/thumb2.png"></a>
+            <a><img src="<?php echo IMG; ?>/thumb3.png"></a>
+            <a><img src="<?php echo IMG; ?>/thumb2.png"></a>
+            <a><img src="<?php echo IMG; ?>/thumb3.png"></a>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="col-7-12 border_right">
+      <div class="content text">
+        <h2>Hallo</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, no sea takimata sanctus est gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
       </div>
     </div>
   </div>
-  <div class="col-7-12 border_right">
-    <div class="content text">
-      <h2>Hallo</h2>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, no sea takimata sanctus est gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    </div>
-  </div>
-</div>  
-
-<div class="grid main">
-      
-          <div class="col-1-1">
-<div class="border_left">
+  <div class="grid main">
+    <div class="col-1-1">
+      <div class="border_left">
         <div class="border_right">
           <div class="content">
             <h2>Diese Seite befindet sich im Aufbau.</h2>

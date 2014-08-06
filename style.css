@@ -1,7 +1,7 @@
 /*
 Theme Name: Warth
 Theme URI: 
-Author: CLAGEH
+Author: KESHCG
 Author URI: 
 Description: WARTH Theme
 Version: 1.0
@@ -452,7 +452,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', end
   -moz-transition: all 0.2s ease-in;
   -ms-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
-  transition: all0.21s ease-in;
+  transition: all 0.2s ease-in;
 }
 .trans-m{
   -webkit-transition: all 0.5s ease-in;
@@ -762,7 +762,7 @@ width:200px;
   -moz-transition: all 0.2s ease-in;
   -ms-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
-  transition: all0.2s ease-in;
+  transition: all 0.2s ease-in;
   font-size: 14px;
   color: #260000;
   margin-bottom: 2px;
@@ -856,27 +856,6 @@ a.btn-teaser{
   right: 20px;
 }
 
-/*LIGHTBOX*/
-
-#imagelightbox {   
-  	top: 0 !important;
-  	left: 0 !important;
-  	right: 0 !important;
-  	bottom: 0 !important;
-  	margin: auto;
-  	position: fixed;
-	z-index: 9999;
-}
-#imagelightbox{ 
-  background-color: #fff;
-  background-color: rgba( 255, 255, 255, .9 );
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
 /*Bildergallerie uebersicht*/
 .galimg{
   padding-top: 40px;
@@ -1086,7 +1065,7 @@ width: 100% !important;
 }
 /*OLD Slideshow*/
 /* prev / next links */
-.cycle-prev, .cycle-next { 
+/*.cycle-prev, .cycle-next { 
   position: absolute; 
   top: 0; 
   width: 15%; 
@@ -1113,7 +1092,7 @@ width: 100% !important;
 .cycle-next { 
   right: 0; 
   background: url(img/slider-prev.png) 90% 50% no-repeat;
-}
+}*/
 
 /* language switcher */
 .language .flag {
@@ -1137,4 +1116,18 @@ width: 100% !important;
 }
 .archive-preview img {
 	margin: 0 auto;
+}
+.cat_hl{
+  padding: 40px 0 0 0;
+  margin: 0px 0 0px 0;
+}
+.cat_p{
+font-size: 1.4em;
+font-weight: 300;
+margin: 0 0 20px;
+}
+.img-detail img{
+  position: relative;
+ margin-left: -150px;
+ left: 50%;
 }

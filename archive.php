@@ -32,7 +32,7 @@ endif;
 
 								if ( has_post_thumbnail() ) :
 									echo '<li>';
-										echo '<a href="' . get_the_permalink() . '" title="' . get_the_title() . '" class="js_get-post" data-id="' . get_the_ID() . '">';
+										echo '<a href="' . get_permalink() . '" title="' . get_the_title() . '" class="js_get-post" data-id="' . get_the_ID() . '">';
 											the_post_thumbnail( 'thumbnail' );
 										echo '</a>';
 									echo '</li>';
@@ -55,11 +55,11 @@ endif;
 
 								echo '<div class="archive-preview">';
 
-									the_title('<h1 class="js_title">', '</h1>');
+									the_title('<h1 class="js_title cat_hl">', '</h1>');
 
-									echo '<p class="js_content">'. get_the_content() .'</p>';
+									echo '<p class="js_content  cat_p">'. get_the_content() .'</p>';
 
-									echo '<div class="js_image">';
+									echo '<div class="js_image  img-detail">';
 										if ( has_post_thumbnail() ) :
 											the_post_thumbnail( 'medium' );
 										endif;

@@ -2,29 +2,14 @@
 /**
  * Template Name: Warth Gallerie Werke
  *
- * @author        CLAGEH
+ * @author        KESHCG
  * @version       1.0.0
  *
  */
 
 get_header();
-
 ?>
-<!-- 
-<script src="js/jquery.min.js"></script>
-<script src="js/imagelightbox.min.js"></script>
-<script>
-    $( function()
-    {
-        $( 'a' ).imageLightbox();
-    });
-</script>
- -->
 <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
-<?php /* TODO: foreach taxonomy get tax and add thumbnail
-foreach ( $categories as $category ) :
-  get_cat_item( $category, true );
-endforeach;*/ ?>
 <div class="grid grid-pad main">
   <div class="col-5-12">
     <div class="border_left">

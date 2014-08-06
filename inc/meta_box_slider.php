@@ -70,12 +70,12 @@ function YOUR_PREFIX_register_meta_boxes( $meta_boxes )
 		'priority' => 'high',
 		'autosave' => true,
 		'fields'   => array(
-			array(
+/*			array(
 				'name' => __( 'Standard teaser anzeigen', 'warth' ),
 				'id'   => "{$prefix}show_standardteaser",
 				'type' => 'checkbox',
 				'std'  => 1,
-			),
+			),*/
 			array(
 				'name' => __( 'Teaser anzeigen', 'warth' ),
 				'id'   => "{$prefix}show_teaser",

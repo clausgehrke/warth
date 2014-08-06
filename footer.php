@@ -16,6 +16,7 @@
     $teaser_headlines = rwmb_meta( 'wa_teaser_headline', $args = array(), $post_id = 83 );
     $teaser_link = rwmb_meta( 'wa_teaser_link', $args = array(), $post_id = 83 );
     /*echo '<pre>';
+    TODO: Standardteaser
     print_r($teaser_images[0]) ;
     print_r($teaser_images[1]) ;
     print_r($teaser_images[2]) ;
@@ -74,4 +75,29 @@ endif;?>
 <?php wp_footer(); ?>
 
 </body>
+
+<!-- Galerie slider -->
+<script type="text/javascript">
+    $(window).load(function(){
+      $('.flexslider.gall').flexslider({
+        animation: "fade",
+        controlNav: "thumbnails",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+  <!-- Header slider -->
+<script type="text/javascript">
+    $(window).load(function(){
+      $('.flexslider.headerslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+
 </html>
