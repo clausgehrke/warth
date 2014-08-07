@@ -10,9 +10,9 @@ jQuery(document).ready(function ($) {
 	/*
 	 * cycle slideshow
 	 */
-	$('.cycle-slideshow').cycle({
+	/*$('.cycle-slideshow').cycle({
 		'log': false
-	});
+	});*/
 
 	/*
 	 * load images
@@ -27,7 +27,8 @@ jQuery(document).ready(function ($) {
 		$(this).parent().addClass('active');
 		$('.js_contact').attr('href', contact);
 		// loading
-		$('.archive-postlist').after('<div class="loading">Loading...</div>');
+		//$('.archive-postlist').after('<div class="loading"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>');
+		$('.archive-postlist').after('<div class="loading"><div class="spinner"></div></div>');
 		for ( var i = 0; i < load_content.length; i++ ) {
 			// fade out
 			$(load_content[i]).animate({
