@@ -227,7 +227,7 @@ html[xmlns] .slides {
 	overflow: hidden;
 }
 .flex-control-thumbs li {
-	width: 25%;
+	width: 20%;
 	float: left;
 	margin: 0;
 }
@@ -243,6 +243,25 @@ html[xmlns] .slides {
 .flex-control-thumbs .flex-active {
 	opacity: 1;
 	cursor: default;
+}
+ol.flex-control-nav.flex-control-thumbs li img {
+float: left;
+border: solid 3px #ffffff;
+ -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+/*ol.flex-control-nav.flex-control-thumbs li:last-child{
+	background: url(../img/uislider2.png) 50% 50% no-repeat;
+}
+ol.flex-control-nav.flex-control-thumbs li:first-child{
+	background: url(../img/uislider1.png) 50% 50% no-repeat;
+}*/
+ol.flex-control-nav.flex-control-thumbs li  img.flex-active,
+ol.flex-control-nav.flex-control-thumbs li:hover img {
+border-color: #000;
 }
 
 @media screen and (max-width: 860px) {
