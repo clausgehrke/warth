@@ -57,9 +57,9 @@ endif;
 
 									the_title('<h1 class="js_title cat_hl">', '</h1>');
 
-									echo '<p class="js_content  cat_p">'. get_the_content() .'</p>';
+									echo '<p class="js_content cat_p">'. get_the_content() .'</p>';
 
-									echo '<div class="js_image  img-detail">';
+									echo '<div class="js_image img-detail">';
 										if ( has_post_thumbnail() ) :
 											the_post_thumbnail( 'medium' );
 										endif;

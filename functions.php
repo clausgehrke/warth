@@ -95,6 +95,8 @@ function scripts_enqueue() {
       wp_enqueue_script( 'jqueryeasing' );
       wp_register_script( 'jquerymousewheel', JS . '/jquery.mousewheel.js', array( 'jquery' ), '1.0.0', true );
       wp_enqueue_script( 'jquerymousewheel' );
+      wp_register_script( 'jquerycycle2', JS . '/jquery.cycle2.js', array( 'jquery' ), '1.0.0', true );
+      wp_enqueue_script( 'jquerycycle2' );
     endif;
 
 	endif;
