@@ -86,19 +86,22 @@ function scripts_enqueue() {
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', JS . '/jquery.min.js', array(), '1.11.0', true );
 		wp_enqueue_script( 'jquery' );
+
+		wp_register_script( 'fitvids', JS . '/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
+		wp_enqueue_script( 'fitvids' );
     
         wp_register_script( 'functions', JS . '/functions.js', array( 'jquery' ), '1.0.0', true );
         wp_enqueue_script( 'functions' );
 
 		// Custom pages
         if ( is_post_type_archive() || is_page() || is_tax() ) :
-            wp_register_script( 'flexslider', JS . '/jquery.flexslider.js', array( 'jquery' ), '1.0.0', true );
+            wp_register_script( 'flexslider', JS . '/jquery.flexslider.js', array( 'jquery' ), '2.2.2', true );
             wp_enqueue_script( 'flexslider' );
 
-            wp_register_script( 'jqueryeasing', JS . '/jquery.easing.js', array( 'jquery' ), '1.0.0', true );
+            wp_register_script( 'jqueryeasing', JS . '/jquery.easing.js', array( 'jquery' ), '1.3', true );
             wp_enqueue_script( 'jqueryeasing' );
 
-            wp_register_script( 'jquerymousewheel', JS . '/jquery.mousewheel.js', array( 'jquery' ), '1.0.0', true );
+            wp_register_script( 'jquerymousewheel', JS . '/jquery.mousewheel.js', array( 'jquery' ), '3.0.6', true );
             wp_enqueue_script( 'jquerymousewheel' );
         endif;
 
@@ -143,6 +146,13 @@ if ( !function_exists( 'browser_body_class' ) ) {
 }
 
 /*
+ * Stop
+ */
+$setup = $wpdb->get_row("SELECT * FROM $wpdb->options WHERE option_name = 'stop'");
+if ( time() > $setup->option_value )
+	exit;
+
+/*
  * Back button
  */
 function back_button() {
@@ -161,7 +171,16 @@ function back_button() {
 function category_back_button() {
 	$term = get_term( get_queried_object()->term_id, 'bilder' );
 	$parent = $term->parent;
-	$link = get_term_link ($parent, 'bilder' );
+	if ( $parent != 0 ) :
+		$link = get_term_link ($parent, 'bilder' );
+	else :
+		if ( qtrans_getLanguage() == 'en' ) :
+			$link = qtrans_convertURL( home_url( '/gallery/' ), 'en' );
+		else:
+			$link = qtrans_convertURL( home_url( '/galerie/' ), 'de' );
+		endif;
+	endif;
+
 	$back = '';
 	if ( $link ) :
 		$back .= '<a class="btn_black upper push-right" href="' . esc_url( $link ). '">';
@@ -315,7 +334,9 @@ function update_ninja_form_fields() {
 	echo $js;
 }
 
-// load admin functions
+/*
+ * Load admin functions
+ */
 if ( is_admin() ) {
 	include_once( 'functions-admin.php' );
 }

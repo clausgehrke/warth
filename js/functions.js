@@ -8,6 +8,11 @@ jQuery(document).ready(function ($) {
 	});
 
 	/*
+	 * fitVids
+	 */
+	$('.content').fitVids();
+
+	/*
 	 * flexslider
 	 */
 	$('.flexslider.gall').flexslider({
