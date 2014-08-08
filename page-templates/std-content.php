@@ -1,6 +1,8 @@
 <?php
 /*
  * Template Name: Warth Content
+ *
+ * @todo: unsed?
  */
 
 get_header();

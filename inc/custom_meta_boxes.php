@@ -68,46 +68,6 @@ $meta_boxes[] = array(
 	)
 );
 
-// TEASER
-$meta_boxes[] = array(
-	'id'       => 'teaser_items',
-	'title'    => __( 'TEASER', 'warth' ),
-	'pages'    => array( 'page' ),
-	'context'  => 'normal',
-	'priority' => 'high',
-	'autosave' => true,
-	'fields'   => array(
-		array(
-			'name' => __( 'Teaser anzeigen', 'warth' ),
-			'id'   => "{$prefix}show_teaser",
-			'type' => 'checkbox',
-			'std'  => 0,
-		),
-		array(
-			'name'             => __( 'Teaser Bilder max. 3', 'warth' ),
-			'id'               => "{$prefix}teaser_images",
-			'type'             => 'image_advanced',
-			'max_file_uploads' => 3,
-		),
-		array(
-			'name'  => __( 'Teaser Überschrift', 'warth' ),
-			'id'    => "{$prefix}teaser_headline",
-			'desc'  => __( 'Text description', 'warth' ),
-			'type'  => 'text',
-			'std'   => __( 'Warth', 'warth' ),
-			'clone' => true,
-		),
-		array(
-			'name'  => __( 'Teaser Link', 'warth' ),
-			'id'    => "{$prefix}teaser_link",
-			'desc'  => __( 'Text description', 'warth' ),
-			'type'  => 'text',
-			'std'   => __( 'warth-art.com', 'warth' ),
-			'clone' => true,
-		),
-	),
-);
-
 // FILE DOWNLOAD
 $meta_boxes[] = array(
 	'id' => 'file_download',

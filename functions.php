@@ -16,6 +16,7 @@ define( 'JSS', THEME . '/jss' );
 define( 'CSS', THEME . '/css' );
 define( 'IMG', THEME . '/img' );
 require_once( FUNCTIONS . 'inc/custom_meta_boxes.php' );
+require_once( FUNCTIONS . 'inc/teaser_widget.php' );
 
 // prepare for localization
 add_action( 'after_setup_theme', 'warth_theme_setup' );
@@ -38,9 +39,9 @@ function remove_header_info() {
 // register image sizes
 if ( function_exists( 'add_image_size' ) ) {
 	// $name, $width, $height, $crop
-	add_image_size( 'grid-preview-item', 120, 90, true ); // no
-	add_image_size( 'grid-item', 300, 225, true ); // no
-	add_image_size( 'teaser-item', 300, 240, true ); // cropped
+	add_image_size( 'grid-preview-item', 120, 90, true );
+	add_image_size( 'grid-item', 300, 225, true );
+	add_image_size( 'teaser-item', 300, 240, true );
 	add_image_size( 'slider-image', 960, 350, true );
 	add_image_size( 'flexslider-full', 450, 450, true );
 	add_image_size( 'flexslider-thumb', 150, 150, true );
@@ -212,6 +213,28 @@ function add_custom_taxonomies() {
             ),
 	    )
     );
+}
+
+/*
+ * Register Sidebar Widgets
+ */
+if ( function_exists('register_sidebar') ) {
+
+	register_sidebar( array(
+		'name'          => 'Teaser',
+		'id'            => 'teaser',
+		'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>'
+	) );
+
+}
+
+// register theme widgets
+add_action( 'widgets_init', 'register_theme_widgets' );
+function register_theme_widgets() {
+	register_widget( 'Teaser' );
 }
 
 /*
