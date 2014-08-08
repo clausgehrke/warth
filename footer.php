@@ -2,16 +2,12 @@
 /*
  * footer
  */
-?>
 
+$show_standardteaser = rwmb_meta( 'wa_show_standardteaser' );
+$show_teaser      = rwmb_meta( 'wa_show_teaser' );
 
-  <?php 
-  $show_standardteaser = rwmb_meta( 'wa_show_standardteaser' );
-  $show_teaser      = rwmb_meta( 'wa_show_teaser' );
- ?>
-  <?php if ($show_standardteaser) :
+if ($show_standardteaser) :
 
-    
     $teaser_images = rwmb_meta( 'wa_teaser_images', $args = array(), $post_id = 83 );
     $teaser_headlines = rwmb_meta( 'wa_teaser_headline', $args = array(), $post_id = 83 );
     $teaser_link = rwmb_meta( 'wa_teaser_link', $args = array(), $post_id = 83 );
@@ -55,6 +51,7 @@ endif;?>
   endforeach;
   echo  '</div>';
 endif;?>
+
 <?php /* Real Footer */ ?>
 
 <div class="footer">
@@ -75,5 +72,4 @@ endif;?>
 <?php wp_footer(); ?>
 
 </body>
-
 </html>

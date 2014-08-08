@@ -44,7 +44,9 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'grid-preview-item', 120, 90, true ); // no
 	add_image_size( 'grid-item', 300, 225, true ); // no
 	add_image_size( 'teaser-item', 300, 240, true ); // cropped
-	add_image_size( 'slider-image', 960, 350, true ); 
+	add_image_size( 'slider-image', 960, 350, true );
+	add_image_size( 'flexslider-full', 450, 450, true );
+	add_image_size( 'flexslider-thumb', 150, 150, true );
 }
 
 // register nav menus

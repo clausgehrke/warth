@@ -36,6 +36,7 @@
  } /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {
 	width: 100%;
+	height: auto;
 	display: block;}
 .flex-pauseplay span {
 	text-transform: capitalize;
