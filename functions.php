@@ -86,19 +86,22 @@ function scripts_enqueue() {
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', JS . '/jquery.min.js', array(), '1.11.0', true );
 		wp_enqueue_script( 'jquery' );
+
+		wp_register_script( 'fitvids', JS . '/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
+		wp_enqueue_script( 'fitvids' );
     
         wp_register_script( 'functions', JS . '/functions.js', array( 'jquery' ), '1.0.0', true );
         wp_enqueue_script( 'functions' );
 
 		// Custom pages
         if ( is_post_type_archive() || is_page() || is_tax() ) :
-            wp_register_script( 'flexslider', JS . '/jquery.flexslider.js', array( 'jquery' ), '1.0.0', true );
+            wp_register_script( 'flexslider', JS . '/jquery.flexslider.js', array( 'jquery' ), '2.2.2', true );
             wp_enqueue_script( 'flexslider' );
 
-            wp_register_script( 'jqueryeasing', JS . '/jquery.easing.js', array( 'jquery' ), '1.0.0', true );
+            wp_register_script( 'jqueryeasing', JS . '/jquery.easing.js', array( 'jquery' ), '1.3', true );
             wp_enqueue_script( 'jqueryeasing' );
 
-            wp_register_script( 'jquerymousewheel', JS . '/jquery.mousewheel.js', array( 'jquery' ), '1.0.0', true );
+            wp_register_script( 'jquerymousewheel', JS . '/jquery.mousewheel.js', array( 'jquery' ), '3.0.6', true );
             wp_enqueue_script( 'jquerymousewheel' );
         endif;
 
