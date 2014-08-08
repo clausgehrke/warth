@@ -15,8 +15,7 @@ define( 'JS', THEME . '/js' );
 define( 'JSS', THEME . '/jss' );
 define( 'CSS', THEME . '/css' );
 define( 'IMG', THEME . '/img' );
-require_once( FUNCTIONS . 'inc/meta_box_slider.php' );
-require_once( FUNCTIONS . 'inc/meta_box_categories.php' );
+require_once( FUNCTIONS . 'inc/custom_meta_boxes.php' );
 
 // prepare for localization
 add_action( 'after_setup_theme', 'warth_theme_setup' );

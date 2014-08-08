@@ -38,6 +38,104 @@ $meta_boxes[] = array(
 	)
 );
 
+// SLIDER
+$meta_boxes[] = array(
+	'id'       => 'header_slider',
+	'title'    => __( 'SLIDER', 'warth' ),
+	'pages'    => array( 'page' ),
+	'context'  => 'normal',
+	'priority' => 'high',
+	'autosave' => true,
+	'fields'   => array(
+		array(
+			'name' => __( 'Slider anzeigen', 'warth' ),
+			'id'   => "{$prefix}show_slider",
+			'type' => 'checkbox',
+			'std'  => 0
+		),
+		array(
+			'name'             => __( 'Slider Bilder max. 5', 'warth' ),
+			'id'               => "{$prefix}slider_images",
+			'type'             => 'image_advanced',
+			'max_file_uploads' => 5
+		),
+		array(
+			'name' => __( 'Rahmen für Slider', 'warth' ),
+			'id'   => "{$prefix}slider_frame",
+			'type' => 'checkbox',
+			'std'  => 0
+		)
+	)
+);
+
+// TEASER
+$meta_boxes[] = array(
+	'id'       => 'teaser_items',
+	'title'    => __( 'TEASER', 'warth' ),
+	'pages'    => array( 'page' ),
+	'context'  => 'normal',
+	'priority' => 'high',
+	'autosave' => true,
+	'fields'   => array(
+		array(
+			'name' => __( 'Teaser anzeigen', 'warth' ),
+			'id'   => "{$prefix}show_teaser",
+			'type' => 'checkbox',
+			'std'  => 0,
+		),
+		array(
+			'name'             => __( 'Teaser Bilder max. 3', 'warth' ),
+			'id'               => "{$prefix}teaser_images",
+			'type'             => 'image_advanced',
+			'max_file_uploads' => 3,
+		),
+		array(
+			'name'  => __( 'Teaser Überschrift', 'warth' ),
+			'id'    => "{$prefix}teaser_headline",
+			'desc'  => __( 'Text description', 'warth' ),
+			'type'  => 'text',
+			'std'   => __( 'Warth', 'warth' ),
+			'clone' => true,
+		),
+		array(
+			'name'  => __( 'Teaser Link', 'warth' ),
+			'id'    => "{$prefix}teaser_link",
+			'desc'  => __( 'Text description', 'warth' ),
+			'type'  => 'text',
+			'std'   => __( 'warth-art.com', 'warth' ),
+			'clone' => true,
+		),
+	),
+);
+
+// FILE DOWNLOAD
+$meta_boxes[] = array(
+	'id' => 'file_download',
+	'title' => __( 'Katalog Download', 'warth' ),
+	'pages' => array('page'),
+	'context' => 'normal',
+	'priority' => 'high',
+	'autosave' => true,
+	'only_on'    => array(
+		'template' => array( 'page-templates/kontakt-template.php'),
+	),
+	'fields' => array(
+		array(
+			'name' => __( 'Download Button anzeigen', 'rosenthal' ),
+			'id'   => "{$prefix}show_upload_button",
+			'type' => 'checkbox',
+			'std'  => 0,
+		),
+		array(
+			'name' => __( 'File Upload', 'warth' ),
+			'id'   => "{$prefix}file_upload",
+			'type' => 'file_advanced',
+			'max_file_uploads' => 1,
+			'mime_type' => 'application,audio,video', // Leave blank for all file types
+		)
+	)
+);
+
 /**
  * Register meta boxes
  *
