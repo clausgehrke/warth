@@ -174,7 +174,11 @@ function category_back_button() {
 	if ( $parent != 0 ) :
 		$link = get_term_link ($parent, 'bilder' );
 	else :
-		$link = home_url( 'galerie' );
+		if ( qtrans_getLanguage() == 'en' ) :
+			$link = qtrans_convertURL( home_url( '/gallery/' ), 'en' );
+		else:
+			$link = qtrans_convertURL( home_url( '/galerie/' ), 'de' );
+		endif;
 	endif;
 
 	$back = '';
