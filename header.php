@@ -3,7 +3,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
-	
+
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -32,7 +32,7 @@
 		// prepare language switcher
         if ( qtrans_getLanguage() == 'en' ) :
 	        $lang = '<li class="language">';
-	        $lang .= '<a class="flag qtrans_flag_en" href="' . qtrans_convertURL( home_url( '/' ), 'de' ) . '" title="' . __('English', 'warth') . '">';
+	        $lang .= '<a class="flag qtrans_flag_en" href="' . qtrans_convertURL( home_url( '/' ), 'de' ) . '" title="' . __('Englisch', 'warth') . '">';
 	        $lang .= __('Englisch', 'warth');
 	        $lang .= '</a>';
 	        $lang .= '</li>';
@@ -62,10 +62,7 @@
   </div>
   <div class="mobilnav col-1-1 trans-f">
     <nav>
-      <?php // wp_nav_menu( array('menu' => 'mainmenu' ) ); ?>
-      <?php // wp_nav_menu( array('menu' => 'metamenu' ) ); ?>
       <?php wp_nav_menu( array('menu' => 'mobilmenu' ) ); ?>
-
     </nav>
   </div>
 
