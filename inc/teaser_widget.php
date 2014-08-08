@@ -35,7 +35,6 @@ class Teaser extends WP_Widget {
         $title = apply_filters('widget_title', $instance['title'] );
         $link = $instance['link'];
         $image_id = $instance['image_id'];
-        $more = $instance['more'];
 
 
 	    echo '<div class="col-4-12 teaser-item">';
@@ -45,7 +44,7 @@ class Teaser extends WP_Widget {
 		    echo '<img class="trans-m" src="' . $image_attributes[0] . '" width="' . $image_attributes[1] . '" height="' . $image_attributes[2] . '">';
 	    }
 	    if ( $link ) {
-	        echo '<a href="'. get_permalink( $link ) .'" class="btn_red btn-teaser">' . $more . '</a>';
+	        echo '<a href="'. get_permalink( $link ) .'" class="btn_red btn-teaser">' . __('Mehr', 'warth') . '</a>';
 	    }
 	    echo '</div>';
 
@@ -63,10 +62,6 @@ class Teaser extends WP_Widget {
 
         if(isset($instance['link'])) {
             $link = $instance['link'];
-        }
-
-        if(isset($instance['more'])) {
-            $more = $instance['more'];
         }
 
         if(isset($instance['image_id'])) {
@@ -92,11 +87,6 @@ class Teaser extends WP_Widget {
 	        ?>
 		    <input class="js_link" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="hidden" value="<?php echo esc_attr( $link ); ?>" />
 	        </div>
-        </p>
-
-        <p>
-            <label for="<?php echo $this->get_field_name( 'more' ); ?>"><?php _e( 'Weiterlesen:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'more' ); ?>" name="<?php echo $this->get_field_name( 'more' ); ?>" type="text" value="<?php echo esc_attr( $more ); ?>" />
         </p>
 
         <p>
