@@ -258,7 +258,7 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'post-formats', array( 'image', 'video' ) );
 
 /*
- * Custom Post Types
+ * Custom Post Types Werke
  */
 add_action( 'init', 'my_custom_post_werk' );
 function my_custom_post_werk() {
@@ -288,6 +288,41 @@ function my_custom_post_werk() {
         'taxonomies'      => array( 'werke' )
     );
     register_post_type( 'werk', $args );
+}
+
+
+/*
+ * Custom Post Types Atilier
+ */
+
+add_action( 'init', 'my_custom_post_atelier' );
+function my_custom_post_atelier() {
+    $labels = array(
+        'name'               => __( 'Atelier', 'warth' ),
+        'singular_name'      => __( 'Atelier', 'warth' ),
+        'add_new'            => __( 'Atelierbild hinzufügen', 'warth' ),
+        'add_new_item'       => __( 'Neues Atelierbild hinzufügen', 'warth' ),
+        'edit_item'          => __( 'Atelierbild bearbeiten', 'warth' ),
+        'new_item'           => __( 'Neues Atelier hinzufügen', 'warth' ),
+        'all_items'          => __( 'Alle Atelierbilder', 'warth' ),
+        'view_item'          => __( 'Atelierbilder ansehen', 'warth' ),
+        'search_items'       => __( 'Atelier durchsuchen', 'warth' ),
+        'not_found'          => __( 'keine  Atelierbilder gefunden', 'warth' ),
+        'not_found_in_trash' => __( 'Keine Atelierbilder im Papierkorb', 'warth' ),
+        'parent_item_colon'  => '',
+        'menu_name'          => 'Atelier'
+    );
+    $args = array(
+        'labels'          => $labels,
+        'description'     => '',
+        'public'          => true,
+        'menu_position'   => 5,
+        'supports'        => array( 'title', 'editor', 'thumbnail' ),
+        'has_archive'     => true,
+        'capability_type' => 'post',
+        'taxonomies'      => array( 'atelier' )
+    );
+    register_post_type( 'atelier', $args );
 }
 
 /*
