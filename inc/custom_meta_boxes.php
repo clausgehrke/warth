@@ -68,6 +68,24 @@ $meta_boxes[] = array(
 	)
 );
 
+// TEASER
+$meta_boxes[] = array(
+	'id'       => 'teaser',
+	'title'    => __( 'Teaser', 'warth' ),
+	'pages'    => array( 'page' ),
+	'context'  => 'normal',
+	'priority' => 'high',
+	'autosave' => true,
+	'fields'   => array(
+		array(
+			'name' => __( 'Teaser anzeigen', 'warth' ),
+			'id'   => "{$prefix}show_teaser",
+			'type' => 'checkbox',
+			'std'  => 0,
+		)
+	)
+);
+
 // FILE DOWNLOAD
 $meta_boxes[] = array(
 	'id' => 'file_download',

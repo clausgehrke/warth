@@ -3,10 +3,13 @@
  * footer
  */
 
-if ( is_active_sidebar( 'teaser' ) ) :
+$show_teaser = rwmb_meta( 'wa_show_teaser' );
+if ( $show_teaser && is_active_sidebar( 'teaser' ) ) :
+
 	echo '<div class="grid grid-pad teaser">';
 	dynamic_sidebar( 'teaser' );
 	echo '</div>';
+
 endif;
 
 ?>
