@@ -32,7 +32,7 @@
             echo '<div class="col-4-12 teaser-item">';
             echo '<h3>'. $teaser_headline .'</h3>';
             echo '<img class="trans-m" src="' . $teaser_images['url'] . '" alt="' . $teaser_images['alt'] . '" />';
-            echo '<a href="'. $teaser_link[$i] .'" class="btn_red btn-teaser">Mehr</a>';
+            echo '<a href="'. $teaser_link[$i] .'" class="btn_red btn-teaser">' . __('Mehr', 'warth') . '</a>';
 	        echo '</div>';
             $i++;
         endforeach;
@@ -75,29 +75,5 @@ endif;?>
 <?php wp_footer(); ?>
 
 </body>
-
-<!-- Galerie slider -->
-<script type="text/javascript">
-    $(window).load(function(){
-      $('.flexslider.gall').flexslider({
-        animation: "fade",
-        controlNav: "thumbnails",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-    });
-  </script>
-  <!-- Header slider -->
-<script type="text/javascript">
-    $(window).load(function(){
-      $('.flexslider.headerslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-      });
-    });
-  </script>
 
 </html>

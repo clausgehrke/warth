@@ -8,11 +8,21 @@ jQuery(document).ready(function ($) {
 	});
 
 	/*
-	 * cycle slideshow
+	 * flexslider
 	 */
-	/*$('.cycle-slideshow').cycle({
-		'log': false
-	});*/
+	$('.flexslider.gall').flexslider({
+		animation: 'fade',
+		controlNav: 'thumbnails',
+		start: function(slider){
+			$('body').removeClass('loading');
+		}
+	});
+	$('.flexslider.headerslider').flexslider({
+		animation: 'slide',
+		start: function(slider){
+			$('body').removeClass('loading');
+		}
+	});
 
 	/*
 	 * load images
