@@ -782,19 +782,20 @@ nav a,
    color: #000;
    margin-top:10px; 
 }
-/*BREADCRUMB*/
-#breadcrumb{
+
+/* yoast breadcrumbs */
+.breadcrumbs {
   padding: 10px;
 	text-transform: uppercase;
 }
-#breadcrumb a{
+.breadcrumbs a {
   color:#d70000;
   text-decoration: underline;
 }
 .current{
   text-decoration: underline;
 }
-.breadcrumb-divider:after{
+.breadcrumb-divider:after {
   vertical-align: middle;
   padding-left: 5px;
   padding-left: 5px;
@@ -809,10 +810,10 @@ nav a,
   text-transform: none;
   line-height: 1;
   text-decoration: none !important;
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /*/Navigation styling */
 
 /* BUTTONS */

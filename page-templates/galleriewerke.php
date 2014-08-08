@@ -9,6 +9,11 @@
 
 get_header();
 
+// breadcrumbs
+if ( function_exists('yoast_breadcrumb') ) {
+	yoast_breadcrumb('<div class="grid"><div id="breadcrumbs" class="breadcrumbs col-1-1">','</div></div>');
+}
+
 $taxonomies = rwmb_meta( 'wa_selected_images', 'type=taxonomy&taxonomy=bilder' );
 
 $werke_args    = array(

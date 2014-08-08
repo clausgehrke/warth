@@ -6,9 +6,9 @@
 get_header();
 
 // breadcrumbs
-if ( function_exists('nav_breadcrumb') ) :
-	nav_breadcrumb();
-endif;
+if ( function_exists('yoast_breadcrumb') ) {
+	yoast_breadcrumb('<div class="grid"><div id="breadcrumbs" class="breadcrumbs col-1-1">','</div></div>');
+}
 
 ?>
 	<div class="grid main">
