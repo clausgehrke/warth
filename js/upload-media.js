@@ -1,5 +1,11 @@
 jQuery(document).ready(function($){
 
+	// select link
+	$('.js_select_page select').on('change', function () {
+		var new_val = $(this).find('option:selected').val();
+		$(this).parent().find('.js_link').val($(this).val());
+	});
+
     // upload
     $('.upload_image_button').click(function(e) {
 

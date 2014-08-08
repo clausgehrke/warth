@@ -45,7 +45,7 @@ class Teaser extends WP_Widget {
 		    echo '<img class="trans-m" src="' . $image_attributes[0] . '" width="' . $image_attributes[1] . '" height="' . $image_attributes[2] . '">';
 	    }
 	    if ( $link ) {
-	        echo '<a href="'. $link .'" class="btn_red btn-teaser">' . $more . '</a>';
+	        echo '<a href="'. get_permalink( $link ) .'" class="btn_red btn-teaser">' . $more . '</a>';
 	    }
 	    echo '</div>';
 
@@ -80,8 +80,18 @@ class Teaser extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_name( 'link' ); ?>"><?php _e( 'Link:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>" />
+            <label for="<?php echo $this->get_field_name( 'link' ); ?>"><?php _e( 'Link:' ); ?></label><br />
+	        <div class="js_select_page">
+	        <?php
+	            $args = array(
+		            'id' => $this->get_field_id('link'),
+		            'name' => $this->get_field_name('link'),
+		            'selected' => $instance['link']
+	            );
+	            wp_dropdown_pages( $args );
+	        ?>
+		    <input class="js_link" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="hidden" value="<?php echo esc_attr( $link ); ?>" />
+	        </div>
         </p>
 
         <p>
