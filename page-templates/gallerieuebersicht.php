@@ -71,7 +71,8 @@ foreach ( $werke as $werk ) :
 			echo '<div class="text">';
 				echo '<h2>' . $werk->name . '</h2>';
 				echo '<p>' . $werk->description . '</p>';
-				echo '<a href="'. home_url( '/' . $werk->slug . '/' ) . '" class="btn_red btn-cont-text">';
+				$term_id = $werk->term_id;
+				echo '<a href="'. get_term_link( $werk->slug, $werk->taxonomy ) . '" class="btn_red btn-cont-text">';
 				_e('Mehr', 'warth');
 				echo '</a>';
 			echo '</div><!-- /.text -->';

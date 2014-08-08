@@ -171,7 +171,12 @@ function back_button() {
 function category_back_button() {
 	$term = get_term( get_queried_object()->term_id, 'bilder' );
 	$parent = $term->parent;
-	$link = get_term_link ($parent, 'bilder' );
+	if ( $parent != 0 ) :
+		$link = get_term_link ($parent, 'bilder' );
+	else :
+		$link = home_url( 'galerie' );
+	endif;
+
 	$back = '';
 	if ( $link ) :
 		$back .= '<a class="btn_black upper push-right" href="' . esc_url( $link ). '">';
