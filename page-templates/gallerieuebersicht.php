@@ -57,6 +57,8 @@ foreach ( $werke as $werk ) :
 								endif;
 							endwhile;
 
+							wp_reset_query();
+
 						echo '</ul>';
 					echo '</div><!-- /.flexslider -->';
 				echo '</section>';
@@ -65,20 +67,18 @@ foreach ( $werke as $werk ) :
 
 	endif;
 
-	echo '<div class="col-7-12 border_right">';
-		echo '<div class="text">';
-			echo '<h2>' . $werk->name . '</h2>';
-			echo '<p>' . $werk->description . '</p>';
-			echo '<a href="'. home_url( '/bilder/' . $werk->slug . '/' ) . '" class="btn_red btn-cont-text">';
-			_e('Mehr', 'warth');
-			echo '</a>';
-		echo '</div><!-- /.text -->';
-	echo '</div><!-- /.border_right -->';
+		echo '<div class="col-7-12 border_right">';
+			echo '<div class="text">';
+				echo '<h2>' . $werk->name . '</h2>';
+				echo '<p>' . $werk->description . '</p>';
+				echo '<a href="'. home_url( '/' . $werk->slug . '/' ) . '" class="btn_red btn-cont-text">';
+				_e('Mehr', 'warth');
+				echo '</a>';
+			echo '</div><!-- /.text -->';
+		echo '</div><!-- /.border_right -->';
 
-echo '</div><!-- /.grid -->';
+	echo '</div><!-- /.grid -->';
 
 endforeach;
-
-wp_reset_query();
 
 get_footer();

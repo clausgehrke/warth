@@ -16,6 +16,7 @@ define( 'JSS', THEME . '/jss' );
 define( 'CSS', THEME . '/css' );
 define( 'IMG', THEME . '/img' );
 require_once( FUNCTIONS . 'inc/meta_box_slider.php' );
+require_once( FUNCTIONS . 'inc/meta_box_categories.php' );
 
 // prepare for localization
 add_action( 'after_setup_theme', 'warth_theme_setup' );
@@ -34,11 +35,8 @@ function remove_header_info() {
 	remove_action( 'wp_head', 'adjacent_posts_rel_link' ); // for WordPress < 3.0
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' ); // for WordPress >= 3.0
 }
-// META BOXES 
 
-//http://www.deluxeblogtips.com/meta-box/register-single-meta-box/
 // register image sizes
-// TODO thumbnails etc. festlengen
 if ( function_exists( 'add_image_size' ) ) {
 	// $name, $width, $height, $crop
 	add_image_size( 'grid-preview-item', 120, 90, true ); // no
@@ -57,7 +55,6 @@ register_nav_menus( array(
 // frontend enqueue styles
 add_action( 'wp_enqueue_scripts', 'css_enqueue' );
 function css_enqueue() {
-	// load global styles TODO: rosenthal?
 	wp_register_style( 'warth', get_stylesheet_uri(), array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'warth' );
 

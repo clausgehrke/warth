@@ -8,55 +8,79 @@
  */
 
 get_header();
-?>
-<?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
-<div class="grid grid-pad main">
-  <div class="col-5-12">
-    <div class="border_left">
-      <div class="content galimg">
-        <a href="<?php echo IMG; ?>/galueb.png" data-imagelightbox="b">
-          <img src="<?php echo IMG; ?>/galueb.png">
-        </a>
-        <div class="galslider">
-          <a><img src="<?php echo IMG; ?>/thumb1.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb2.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb3.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb1.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb3.png"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-7-12 border_right">
-    <div class="content text">
-      <h2>Hallo</h2>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      <a href="galleriedetail.html" class="btn_red btn-cont-text">Mehr</a>
-    </div>
-  </div>
-</div>
 
-<div class="grid grid-pad main">
-  <div class="col-5-12">
-    <div class="border_left">
-      <div class="content galimg">
-        <img src="<?php echo IMG; ?>/galueb.png">
-        <div class="galslider">
-          <a><img src="<?php echo IMG; ?>/thumb1.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb2.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb3.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb2.png"></a>
-          <a><img src="<?php echo IMG; ?>/thumb3.png"></a>
-        </div> 
-      </div>
-    </div>
-  </div>
-  <div class="col-7-12 border_right">
-    <div class="content text">
-      <h2>Hallo</h2>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, no sea takimata sanctus est gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    </div>
-  </div>
-</div>  
-<?php
+$taxonomies = rwmb_meta( 'wa_selected_images', 'type=taxonomy&taxonomy=bilder' );
+
+$werke_args    = array(
+	'hide_empty' => 1,
+	'child_of' => $taxonomies[0]->term_id, // only children of selected category
+	'taxonomy' => 'bilder'
+);
+$werke = get_categories( $werke_args );
+
+foreach ( $werke as $werk ) :
+
+	echo '<div class="grid grid-pad main">';
+
+	$cat_args = array(
+		'post_type' => 'werk',
+		'posts_per_page' => 5,
+		'tax_query' => array(
+			'relation' => 'AND',
+			array(
+				'taxonomy' => 'bilder',
+				'field' => 'slug',
+				'terms' => array( $werk->slug )
+			),
+			array(
+				'taxonomy' => 'post_format',
+				'field' => 'slug',
+				'terms' => array( 'post-format-standard', 'post-format-image' )
+			)
+		)
+
+	);
+	$categories = new WP_Query( $cat_args );
+
+	if ( $categories->have_posts() ) :
+
+		echo '<div class="col-5-12">';
+		echo '<div class="border_left">';
+		echo '<section>';
+		echo '<div class="flexslider gall">';
+		echo '<ul class="slides">';
+
+		while ( $categories->have_posts() ) : $categories->the_post();
+			if ( has_post_thumbnail() ) :
+				$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'flexslider-thumb' );
+				echo '<li data-thumb="' . $large_image_url[0] . '">';
+				the_post_thumbnail( 'flexslider-full' );
+				echo '</li>';
+			endif;
+		endwhile;
+
+		wp_reset_query();
+
+		echo '</ul>';
+		echo '</div><!-- /.flexslider -->';
+		echo '</section>';
+		echo '</div><!-- /.border_left -->';
+		echo '</div><!-- /.col-5-1 -->';
+
+	endif;
+
+	echo '<div class="col-7-12 border_right">';
+	echo '<div class="text">';
+	echo '<h2>' . $werk->name . '</h2>';
+	echo '<p>' . $werk->description . '</p>';
+	echo '<a href="'. home_url( '/' . $werk->slug . '/' ) . '" class="btn_red btn-cont-text">';
+	_e('Mehr', 'warth');
+	echo '</a>';
+	echo '</div><!-- /.text -->';
+	echo '</div><!-- /.border_right -->';
+
+	echo '</div><!-- /.grid -->';
+
+endforeach;
+
 get_footer();

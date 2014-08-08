@@ -3,6 +3,7 @@
  * Template Name:  sliderdemo
  * @author        CG
  * @version       1.0.0
+ * @todo unused?
  *
  */
 get_header();
