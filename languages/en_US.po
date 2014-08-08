@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Warth 1.0.0\n"
-"POT-Creation-Date: 2014-08-04 00:36+0100\n"
-"PO-Revision-Date: 2014-08-04 00:36+0100\n"
+"POT-Creation-Date: 2014-08-08 14:35+0100\n"
+"PO-Revision-Date: 2014-08-08 14:37+0100\n"
 "Last-Translator: Sven Hofmann <info@hofmannsven.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:13
+#: 404.php:14
 msgid "Weiter zur Startseite"
 msgstr ""
 
@@ -25,20 +25,29 @@ msgstr ""
 msgid "Kaufanfrage"
 msgstr "Request"
 
+#: content-none.php:8
+msgid "Die angeforderte Seite hat noch keinen Inhalt."
+msgstr "This page has no content."
+
 #: content-werk.php:25
 msgid "Werkkategorie"
 msgstr "Creation category"
 
-#: delete_taxonomy-werk-lines.php:27 delete_taxonomy-werk.php:27
-msgid "Full story…"
-msgstr ""
+#: functions-admin.php:47 functions-admin.php:48
+msgid "Aktuelles"
+msgstr "News"
 
-#: functions-admin.php:58
+#: functions-admin.php:49
+#, fuzzy
+msgid "Beitrag hinzufügen"
+msgstr "Add creation"
+
+#: functions-admin.php:80
 #, php-format
 msgid " <a href=\"%s\" target=\"_blank\">Sven Hofmann</a>"
 msgstr " <a href=\"%s\" target=\"_blank\">Sven Hofmann</a>"
 
-#: functions-admin.php:58
+#: functions-admin.php:80
 #, php-format
 msgid " <a href=\"%s\" target=\"_blank\">Claus Gehrke</a>"
 msgstr " <a href=\"%s\" target=\"_blank\">Claus Gehrke</a>"
@@ -47,99 +56,95 @@ msgstr " <a href=\"%s\" target=\"_blank\">Claus Gehrke</a>"
 msgid "Hauptnavigation"
 msgstr "Main navigation"
 
-#: functions.php:151
+#: functions.php:137
 msgid "Zurück"
 msgstr "Back"
 
-#: functions.php:255
-msgid "Page"
-msgstr ""
-
-#: functions.php:279 functions.php:291
+#: functions.php:160 functions.php:172
 msgid "Werke"
 msgstr "Creations"
 
-#: functions.php:280
+#: functions.php:161
 msgid "Werk"
 msgstr "Creation"
 
-#: functions.php:281
+#: functions.php:162
 msgid "Werk hinzufügen"
 msgstr "Add creation"
 
-#: functions.php:282 functions.php:284
+#: functions.php:163 functions.php:165
 msgid "Neues Werk hinzufügen"
 msgstr "Add new creation"
 
-#: functions.php:283
+#: functions.php:164
 msgid "Werk bearbeiten"
 msgstr "Edit creation"
 
-#: functions.php:285
+#: functions.php:166
 msgid "Alle Werke"
 msgstr "All creations"
 
-#: functions.php:286
+#: functions.php:167
 msgid "Werke ansehen"
 msgstr "View creation"
 
-#: functions.php:287
+#: functions.php:168
 msgid "Werke durchsuchen"
 msgstr "Search creation"
 
-#: functions.php:288
-msgid "keine Werke gefunden"
-msgstr "No creation found"
+#: functions.php:169
+msgid "Keine Werke gefunden"
+msgstr "No creations found"
 
-#: functions.php:289
+#: functions.php:170
 msgid "Keine Werke im Papierkorb"
 msgstr "No creation found in trash"
 
-#: functions.php:316 functions.php:326
+#: functions.php:197 functions.php:207
 msgid "Kategorien"
 msgstr "Categories"
 
-#: functions.php:317
+#: functions.php:198
 msgid "Kategorie"
 msgstr "Category"
 
-#: functions.php:318
+#: functions.php:199
 msgid "Kategorien durchsuchen"
 msgstr "Search category"
 
-#: functions.php:319
+#: functions.php:200
 msgid "Alle Kategorien"
 msgstr "All categories"
 
-#: functions.php:320
+#: functions.php:201
 msgid "Übergeordnete Kategorien"
 msgstr "Parent categories"
 
-#: functions.php:321
+#: functions.php:202
 msgid "Übergeordnete Kategorien:"
 msgstr "Parent categories:"
 
-#: functions.php:322
+#: functions.php:203
 msgid "Kategorie bearbeiten"
 msgstr "Edit category"
 
-#: functions.php:323
+#: functions.php:204
 msgid "Kategorie aktualisieren"
 msgstr "Update category"
 
-#: functions.php:324
+#: functions.php:205
 msgid "Neue Kategorie hinzufügen"
 msgstr "Add new category"
 
-#: functions.php:325
+#: functions.php:206
 msgid "Neuer Kategoriename"
 msgstr "New category name"
 
-#: functions.php:365
+#: functions.php:268
 msgid "durch Kaufanfrage automatisch ausgewählt."
 msgstr "selected automatically by purchase request."
 
-#: functions.php:379
+#: functions.php:282
 msgid "Anfrage für Bild"
 msgstr "Request for Image"
 
@@ -155,258 +160,82 @@ msgstr "English"
 msgid "Deutsch"
 msgstr "German"
 
-#: inc/deletedemo.php:33 inc/meta_box_slider.php:33
+#: inc/custom_meta_boxes.php:20
+msgid "Kategorie-Übersichtsseite"
+msgstr "Category-Overview"
+
+#: inc/custom_meta_boxes.php:30
+msgid "Eltern-Kategorie"
+msgstr "Parent category"
+
+#: inc/custom_meta_boxes.php:45
 msgid "SLIDER"
-msgstr ""
+msgstr "Slider"
 
-#: inc/deletedemo.php:40 inc/meta_box_slider.php:43
+#: inc/custom_meta_boxes.php:52
 msgid "Slider anzeigen"
-msgstr ""
+msgstr "Display slider"
 
-#: inc/deletedemo.php:46
-msgid "Slider Bilder"
-msgstr ""
-
-#: inc/deletedemo.php:60
-msgid "Standard Fields"
-msgstr ""
-
-#: inc/deletedemo.php:79 inc/meta_box_slider.php:165
-msgid "Text"
-msgstr ""
-
-#: inc/deletedemo.php:83 inc/meta_box_slider.php:94
-#: inc/meta_box_slider.php:102 inc/meta_box_slider.php:169
-msgid "Text description"
-msgstr ""
-
-#: inc/deletedemo.php:86 inc/meta_box_slider.php:172
-msgid "Default text value"
-msgstr ""
-
-#: inc/deletedemo.php:92 inc/meta_box_slider.php:178
-msgid "Checkbox"
-msgstr ""
-
-#: inc/deletedemo.php:100 inc/meta_box_slider.php:186
-msgid "Radio"
-msgstr ""
-
-#: inc/deletedemo.php:106 inc/deletedemo.php:117 inc/deletedemo.php:259
-#: inc/deletedemo.php:304 inc/meta_box_slider.php:192
-#: inc/meta_box_slider.php:203
-msgid "Label1"
-msgstr ""
-
-#: inc/deletedemo.php:107 inc/deletedemo.php:118 inc/deletedemo.php:260
-#: inc/deletedemo.php:305 inc/meta_box_slider.php:193
-#: inc/meta_box_slider.php:204
-msgid "Label2"
-msgstr ""
-
-#: inc/deletedemo.php:112 inc/deletedemo.php:299 inc/meta_box_slider.php:198
-msgid "Select"
-msgstr ""
-
-#: inc/deletedemo.php:123 inc/deletedemo.php:310 inc/meta_box_slider.php:209
-msgid "Select an Item"
-msgstr ""
-
-#: inc/deletedemo.php:130 inc/meta_box_slider.php:216
-msgid "Hidden value"
-msgstr ""
-
-#: inc/deletedemo.php:140 inc/meta_box_slider.php:226
-msgid "Textarea"
-msgstr ""
-
-#: inc/deletedemo.php:141 inc/meta_box_slider.php:227
-msgid "Textarea description"
-msgstr ""
-
-#: inc/deletedemo.php:158 inc/meta_box_slider.php:244
-msgid "Password is required"
-msgstr ""
-
-#: inc/deletedemo.php:159 inc/meta_box_slider.php:245
-msgid "Password must be at least 7 characters"
-msgstr ""
-
-#: inc/deletedemo.php:167
-msgid "Advanced Fields"
-msgstr ""
-
-#: inc/deletedemo.php:173
-msgid "Heading"
-msgstr ""
-
-#: inc/deletedemo.php:178
-msgid "Slider"
-msgstr ""
-
-#: inc/deletedemo.php:183
-msgid "$"
-msgstr ""
-
-#: inc/deletedemo.php:184
-msgid " USD"
-msgstr ""
-
-#: inc/deletedemo.php:195
-msgid "Number"
-msgstr ""
-
-#: inc/deletedemo.php:204
-msgid "Date picker"
-msgstr ""
-
-#: inc/deletedemo.php:210
-msgid "(yyyy-mm-dd)"
-msgstr ""
-
-#: inc/deletedemo.php:211
-msgid "yy-mm-dd"
-msgstr ""
-
-#: inc/deletedemo.php:219
-msgid "Datetime picker"
-msgstr ""
-
-#: inc/deletedemo.php:233
-msgid "Time picker"
-msgstr ""
-
-#: inc/deletedemo.php:248
-msgid "Color picker"
-msgstr ""
-
-#: inc/deletedemo.php:254
-msgid "Checkbox list"
-msgstr ""
-
-#: inc/deletedemo.php:265
-msgid "Email"
-msgstr ""
-
-#: inc/deletedemo.php:267
-msgid "Email description"
-msgstr ""
-
-#: inc/deletedemo.php:273
-msgid "Range"
-msgstr ""
-
-#: inc/deletedemo.php:275
-msgid "Range description"
-msgstr ""
-
-#: inc/deletedemo.php:284
-msgid "URL"
-msgstr ""
-
-#: inc/deletedemo.php:286
-msgid "URL description"
-msgstr ""
-
-#: inc/deletedemo.php:292
-msgid "oEmbed"
-msgstr ""
-
-#: inc/deletedemo.php:294
-msgid "oEmbed description"
-msgstr ""
-
-#: inc/deletedemo.php:314
-msgid "Taxonomy"
-msgstr ""
-
-#: inc/deletedemo.php:328
-msgid "Posts (Pages)"
-msgstr ""
-
-#: inc/deletedemo.php:344
-msgid "WYSIWYG / Rich Text Editor"
-msgstr ""
-
-#: inc/deletedemo.php:349
-msgid "WYSIWYG default value"
-msgstr ""
-
-#: inc/deletedemo.php:365 inc/meta_box_slider.php:132
-msgid "File Upload"
-msgstr ""
-
-#: inc/deletedemo.php:371
-msgid "File Advanced Upload"
-msgstr ""
-
-#: inc/deletedemo.php:379
-msgid "Image Upload"
-msgstr ""
-
-#: inc/deletedemo.php:385
-msgid "Thickbox Image Upload"
-msgstr ""
-
-#: inc/deletedemo.php:391
-msgid "Plupload Image Upload"
-msgstr ""
-
-#: inc/deletedemo.php:398
-msgid "Image Advanced Upload"
-msgstr ""
-
-#: inc/meta_box_slider.php:49
+#: inc/custom_meta_boxes.php:58
 msgid "Slider Bilder max. 5"
-msgstr ""
+msgstr "Slider images max. 5"
 
-#: inc/meta_box_slider.php:56
+#: inc/custom_meta_boxes.php:64
 msgid "Rahmen für Slider"
-msgstr ""
+msgstr "Frame for slider"
 
-#: inc/meta_box_slider.php:67
-msgid "TEASER"
-msgstr ""
+#: inc/custom_meta_boxes.php:78
+msgid "Teaser"
+msgstr "Teaser"
 
-#: inc/meta_box_slider.php:74
-msgid "Standard teaser anzeigen"
-msgstr ""
-
-#: inc/meta_box_slider.php:80
+#: inc/custom_meta_boxes.php:85
 msgid "Teaser anzeigen"
-msgstr ""
+msgstr "Display teaser"
 
-#: inc/meta_box_slider.php:86
-msgid "Teaser Bilder max. 3"
-msgstr ""
+#: inc/custom_meta_boxes.php:87
+msgid ""
+"Die Standard-Teaser können im Bereich <a href=\"widgets.php\">Widgets</a> "
+"verwaltet werden."
+msgstr "Manage Teaser in the <a href=\"widgets.php\">Widgets</a> area."
 
-#: inc/meta_box_slider.php:92
-msgid "Teaser Überschrift"
-msgstr ""
-
-#: inc/meta_box_slider.php:96
-msgid "Warth"
-msgstr "Warth"
-
-#: inc/meta_box_slider.php:100
-msgid "Teaser Link"
-msgstr ""
-
-#: inc/meta_box_slider.php:104
-msgid "warth-art.com"
-msgstr "warth-art.com"
-
-#: inc/meta_box_slider.php:113
+#: inc/custom_meta_boxes.php:100
 msgid "Katalog Download"
 msgstr "Catalog download"
 
-#: inc/meta_box_slider.php:126
+#: inc/custom_meta_boxes.php:110
 msgid "Download Button anzeigen"
-msgstr ""
+msgstr "Display download button"
 
-#: inc/meta_box_slider.php:152
-msgid "bitte noch nichts eintragen"
-msgstr ""
+#: inc/custom_meta_boxes.php:116
+msgid "File Upload"
+msgstr "Upload"
+
+#: inc/teaser_widget.php:78
+msgid "Überschrift:"
+msgstr "Title:"
+
+#: inc/teaser_widget.php:83
+msgid "Link:"
+msgstr "Link:"
+
+#: inc/teaser_widget.php:88
+msgid "Weiterlesen:"
+msgstr "Read More:"
+
+#: inc/teaser_widget.php:93
+msgid "Bild-ID: "
+msgstr "Image-ID:"
+
+#: page-templates/gallerieuebersicht.php:75
+#: page-templates/galleriewerke.php:82
+msgid "Mehr"
+msgstr "More"
+
+#~ msgid "Warth"
+#~ msgstr "Warth"
+
+#~ msgid "warth-art.com"
+#~ msgstr "warth-art.com"
 
 #~ msgid "Formate"
 #~ msgstr "Container"

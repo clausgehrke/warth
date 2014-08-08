@@ -19,7 +19,7 @@ if ( function_exists('yoast_breadcrumb') ) {
 						<?php
 
 						// back link
-						echo back_button();
+						echo category_back_button();
 
 						// category intro
 						echo '<h1>' . single_cat_title('' , false) . '</h1>';
@@ -43,7 +43,7 @@ if ( function_exists('yoast_breadcrumb') ) {
 						endif;
 
 						// category content
-						$cat = get_term_by( 'name', single_cat_title( '', false ), 'werke' );
+						$cat = get_term_by( 'name', single_cat_title( '', false ), 'bilder' );
 						$item_query = array(
 							'post_type' => 'werk',
 							'werke' => $cat->slug,

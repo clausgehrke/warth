@@ -13,7 +13,7 @@ class Teaser extends WP_Widget {
     public function __construct() {
         $widget_ops = array(
             'classname' => 'teaser',
-            'description' => 'Dieses Widget auswählen, um einen neuen Link in der Sidebar anzulegen.'
+            'description' => __('Dieses Widget auswählen, um einen neuen Teaser im Footer anzulegen.', 'warth')
         );
 
         parent::__construct( 'teaser', 'Teaser', $widget_ops );
@@ -90,7 +90,7 @@ class Teaser extends WP_Widget {
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_name( 'image_id' ); ?>"><?php _e( 'Bild-ID: ' ); ?><span class="custom_image_id"><?php echo esc_attr( $image_id ); ?></span></label><br />
+            <label for="<?php echo $this->get_field_name( 'image_id' ); ?>"><?php _e( 'Bild-ID:' ); ?> <span class="custom_image_id"><?php echo esc_attr( $image_id ); ?></span></label><br />
             <input class="custom_image widefat" id="<?php echo $this->get_field_id( 'image_id' ); ?>" name="<?php echo $this->get_field_name( 'image_id' ); ?>" type="text" value="<?php echo esc_attr( $image_id ); ?>" style="display:none;" />
             <input class="upload_image_button button button-primary" type="button" value="Upload" style="margin-top: 10px;" />
         </p>

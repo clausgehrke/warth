@@ -7,7 +7,9 @@
  * 
  */
 
-// theme constants
+/*
+ * Theme constants
+ */
 define( 'HOME', esc_url( home_url( '/' ) ) );
 define( 'THEME', get_stylesheet_directory_uri() );
 define( 'FUNCTIONS', get_stylesheet_directory() . '/' );
@@ -18,13 +20,17 @@ define( 'IMG', THEME . '/img' );
 require_once( FUNCTIONS . 'inc/custom_meta_boxes.php' );
 require_once( FUNCTIONS . 'inc/teaser_widget.php' );
 
-// prepare for localization
+/*
+ * Prepare for localization
+ */
 add_action( 'after_setup_theme', 'warth_theme_setup' );
 function warth_theme_setup(){
 	load_theme_textdomain( 'warth', get_template_directory() . '/languages' );
 }
 
-// remove unnecessary header info
+/*
+ * Remove unnecessary header info
+ */
 add_action( 'init', 'remove_header_info' );
 function remove_header_info() {
 	remove_action( 'wp_head', 'rsd_link' );
@@ -36,7 +42,9 @@ function remove_header_info() {
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' ); // for WordPress >= 3.0
 }
 
-// register image sizes
+/*
+ * Register image sizes
+ */
 if ( function_exists( 'add_image_size' ) ) {
 	// $name, $width, $height, $crop
 	add_image_size( 'grid-preview-item', 120, 90, true );
@@ -47,50 +55,59 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'flexslider-thumb', 150, 150, true );
 }
 
-// register nav menus
+/*
+ * Register nav menus
+ */
 register_nav_menus( array(
 	'main' => __( 'Hauptnavigation', 'warth' )
 ) );
 
-// frontend enqueue styles
+/*
+ * Frontend enqueue styles
+ */
 add_action( 'wp_enqueue_scripts', 'css_enqueue' );
 function css_enqueue() {
 	wp_register_style( 'warth', get_stylesheet_uri(), array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'warth' );
 
-  if ( is_post_type_archive() || is_page()) :
-    wp_register_style( 'flexslidercss', CSS . '/flexslider.css', array( 'warth' ), '1.0.0', 'all' );
-    wp_enqueue_style( 'flexslidercss' );
-  endif;
+    if ( is_post_type_archive() || is_page() || is_tax() ) :
+        wp_register_style( 'flexslidercss', CSS . '/flexslider.css', array( 'warth' ), '1.0.0', 'all' );
+        wp_enqueue_style( 'flexslidercss' );
+    endif;
 }
 
-// frontend enqueue scripts
+/*
+ * Frontend enqueue scripts
+ */
 add_action( 'wp_enqueue_scripts', 'scripts_enqueue' );
 function scripts_enqueue() {
-	if ( ! is_admin() ) :
+	if ( !is_admin() ) :
 
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', JS . '/jquery.min.js', array(), '1.11.0', true );
 		wp_enqueue_script( 'jquery' );
     
-    wp_register_script( 'functions', JS . '/functions.js', array( 'jquery' ), '1.0.0', true );
-    wp_enqueue_script( 'functions' );
+        wp_register_script( 'functions', JS . '/functions.js', array( 'jquery' ), '1.0.0', true );
+        wp_enqueue_script( 'functions' );
 
-		// Für Spezielle Seiten
-		    // Für Spezielle Seiten
-    if ( is_post_type_archive() || is_page()) :
-      wp_register_script( 'flexslider', JS . '/jquery.flexslider.js', array( 'jquery' ), '1.0.0', true );
-      wp_enqueue_script( 'flexslider' );
-      wp_register_script( 'jqueryeasing', JS . '/jquery.easing.js', array( 'jquery' ), '1.0.0', true );
-      wp_enqueue_script( 'jqueryeasing' );
-      wp_register_script( 'jquerymousewheel', JS . '/jquery.mousewheel.js', array( 'jquery' ), '1.0.0', true );
-      wp_enqueue_script( 'jquerymousewheel' );
+		// Custom pages
+        if ( is_post_type_archive() || is_page() || is_tax() ) :
+            wp_register_script( 'flexslider', JS . '/jquery.flexslider.js', array( 'jquery' ), '1.0.0', true );
+            wp_enqueue_script( 'flexslider' );
 
-    endif;
+            wp_register_script( 'jqueryeasing', JS . '/jquery.easing.js', array( 'jquery' ), '1.0.0', true );
+            wp_enqueue_script( 'jqueryeasing' );
+
+            wp_register_script( 'jquerymousewheel', JS . '/jquery.mousewheel.js', array( 'jquery' ), '1.0.0', true );
+            wp_enqueue_script( 'jquerymousewheel' );
+        endif;
+
 	endif;
 }
 
-// add browser detection body class
+/*
+ * Add browser detection body class
+ */
 if ( !function_exists( 'browser_body_class' ) ) {
 	add_filter( 'body_class', 'browser_body_class' );
 	function browser_body_class( $classes ) {
@@ -134,6 +151,20 @@ function back_button() {
 	$back = '';
 	if ( $tax_slug ) :
 		$back .= '<a class="btn_black upper push-right" href="' . home_url( '/'. $tax_slug . '/' ) . '">';
+		$back .= __('Zurück', 'warth');
+		$back .= '</a>';
+	endif;
+
+	return $back;
+}
+
+function category_back_button() {
+	$term = get_term( get_queried_object()->term_id, 'bilder' );
+	$parent = $term->parent;
+	$link = get_term_link ($parent, 'bilder' );
+	$back = '';
+	if ( $link ) :
+		$back .= '<a class="btn_black upper push-right" href="' . esc_url( $link ). '">';
 		$back .= __('Zurück', 'warth');
 		$back .= '</a>';
 	endif;

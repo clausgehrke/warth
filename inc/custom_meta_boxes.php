@@ -12,6 +12,7 @@ global $meta_boxes;
 $meta_boxes = array();
 
 /*
+ * Kategorie-Auswahl
  * Only on: Warth Gallerie Werke
  */
 $meta_boxes[] = array(
@@ -38,10 +39,12 @@ $meta_boxes[] = array(
 	)
 );
 
-// SLIDER
+/*
+ * Slider
+ */
 $meta_boxes[] = array(
 	'id'       => 'header_slider',
-	'title'    => __( 'SLIDER', 'warth' ),
+	'title'    => __( 'Slider', 'warth' ),
 	'pages'    => array( 'page' ),
 	'context'  => 'normal',
 	'priority' => 'high',
@@ -68,7 +71,10 @@ $meta_boxes[] = array(
 	)
 );
 
-// TEASER
+/*
+ * Teaser
+ * Only on: Pages
+ */
 $meta_boxes[] = array(
 	'id'       => 'teaser',
 	'title'    => __( 'Teaser', 'warth' ),
@@ -80,13 +86,17 @@ $meta_boxes[] = array(
 		array(
 			'name' => __( 'Teaser anzeigen', 'warth' ),
 			'id'   => "{$prefix}show_teaser",
+			'desc' => __('Die Standard-Teaser können im Bereich <a href="widgets.php">Widgets</a> verwaltet werden.', 'warth'),
 			'type' => 'checkbox',
 			'std'  => 0,
 		)
 	)
 );
 
-// FILE DOWNLOAD
+/*
+ * File Download
+ * Only on: Kontakt
+ */
 $meta_boxes[] = array(
 	'id' => 'file_download',
 	'title' => __( 'Katalog Download', 'warth' ),
