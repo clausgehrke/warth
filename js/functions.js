@@ -1,4 +1,9 @@
 jQuery(document).ready(function ($) {
+
+	/*var $borderheight = $('.border_left').height();
+	$( ".border_right" ).click( function() {
+		$( this ).height( $borderheight);
+	});*/
 	/*
 	 * menu interaction
 	 */

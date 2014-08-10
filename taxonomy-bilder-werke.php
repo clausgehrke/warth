@@ -45,7 +45,7 @@ foreach ( $werke as $werk ) :
 
 		echo '<div class="col-5-12">';
 			echo '<div class="border_left">';
-				echo '<section>';
+				echo '<section class="resp-pad">';
 					echo '<div class="flexslider gall">';
 						echo '<ul class="slides">';
 

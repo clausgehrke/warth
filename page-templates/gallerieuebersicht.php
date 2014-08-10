@@ -42,9 +42,9 @@ foreach ( $werke as $werk ) :
 
 	if ( $categories->have_posts() ) :
 
-		echo '<div class="col-5-12">';
+		echo '<div class="gallcol col-5-12">';
 			echo '<div class="border_left">';
-				echo '<section>';
+				echo '<section class="resp-pad">';
 					echo '<div class="flexslider gall">';
 						echo '<ul class="slides">';
 

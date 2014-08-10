@@ -279,12 +279,17 @@ padding-right:20px
      padding-left: 0;
      padding-right: 0
   }
+
   [class*=col-] {
     width:auto;
     float:none;
     margin: 10px 0;
     padding-left:20px;
     padding-right:20px
+  }  
+  [class*=col-].gallcol {
+    padding-left:0px;
+    padding-right:0px
   }
 }
 /*end simple grid*/
@@ -837,14 +842,16 @@ a.btn_grey {
    color: #000000;
 }
 .btn_black {
-	padding: 5px 10px;
+	padding: 10px 15px;
 	background-color: #000;
 	color: #fff;
 }
 .btn-back{
+  padding: 10px 15px;
   position: relative;
   float: right;
   text-transform: uppercase;
+
 }
 .btn-cont-text{
   position: relative;
@@ -907,6 +914,9 @@ a.btn-teaser{
   margin: 0;
 
 }
+.resp-pad{
+  padding: 40px;
+}
 /*FORMULAR TODO:  Formular Styling*/
 .pad-grid {
   padding: 30px 0 0 30px;
@@ -948,14 +958,14 @@ a.btn-teaser{
 input {
   padding: 5px 10px;
   height:  40px;
-  border:solid 1px #000;
+  border:solid 1px #bfbfbf;
   box-shadow: 0 0 0px 0px #000;
   -webkit-box-shadow: 0 0 0 0 #000;
 }
 textarea {
   padding: 5px 10px;
   margin:  0 0 10px 0;
-  border:solid 1px #000;
+  border:solid 1px #bfbfbf;
   box-shadow: 0 0 0 0 #000;
   -webkit-box-shadow: 0 0 0 0 #000;
 }
@@ -967,6 +977,12 @@ textarea {
   -webkit-box-shadow: 0 0 1px 1px #000;
   box-shadow: 0 0 1px 1px #000;
 }
+
+ input[type="submit"]:active,
+ input[type="submit"]:focus{
+  background-color: #d76666;
+
+ }
 .form-legend {
   font-size: 1.75em;
   margin:    0 0 1.5% 0;
@@ -974,6 +990,15 @@ textarea {
 .form-element label {
   padding: 10px 0 5px;
   color:   #252525;
+}
+/*lable katalog*/
+.field-wrap.label-left label{
+  display: inline-block !important;
+  width:20% !important;
+}
+.ninja-forms-field.katalog{
+width:40% !important;
+display: inline-block !important;
 }
 .ninja-forms-form-wrap input[type="checkbox"] {
   margin-right:   15px; 
@@ -1001,7 +1026,7 @@ textarea {
   vertical-align:   middle;
 }
 input[type="checkbox"]:checked::before {
-  color:   #000;
+  color: #d70000;
   opacity: 1;
 }
 label.checkbox.italic {
@@ -1116,10 +1141,29 @@ blockquote.right {
     .meta-nav{
       display: none;
     }
-.text-wrap.label-above input, 
-.text-wrap.label-below input, .text-wrap.label-inside input, .textarea-wrap.label-above textarea, .textarea-wrap.label-below textarea, .textarea-wrap.label-inside textarea, .list-dropdown-wrap.label-above select, .list-dropdown-wrap.label-below select {
-width: 100% !important;
-}
+    .text-wrap.label-above input, 
+    .text-wrap.label-below input, 
+    .text-wrap.label-inside input, 
+    .textarea-wrap.label-above textarea, 
+    .textarea-wrap.label-below textarea, 
+    .textarea-wrap.label-inside textarea, 
+    .list-dropdown-wrap.label-above select, 
+    .list-dropdown-wrap.label-below select {
+      width: 100% !important;
+    }
+    .resp-pad{
+      padding: 10px;
+    }
+    /*lable katalog*/
+    .field-wrap.label-left label{
+      display: block !important;
+      width:100% !important;
+    }
+    .ninja-forms-field.katalog{
+    width:100% !important;
+    display: block !important;
+
+    }
 }
 
 
@@ -1128,7 +1172,14 @@ width: 100% !important;
 	padding-left: 30px;
 	background-position: 0px 3px;
 }
-
+.language .qtrans_flag_en{
+background-image: url(img/en.png);
+background-repeat: no-repeat;
+}
+.language .qtrans_flag_de{
+background-image: url(img/de.png);
+background-repeat: no-repeat;
+}
 /* archive */
 .archive-postlist li {
 	float: left;

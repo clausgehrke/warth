@@ -160,7 +160,7 @@ function back_button() {
 	$tax_slug = $post_type->rewrite['slug'];
 	$back = '';
 	if ( $tax_slug ) :
-		$back .= '<a class="btn_black upper push-right" href="' . home_url( '/'. $tax_slug . '/' ) . '">';
+		$back .= '<a class="btn_back upper push-right" href="' . home_url( '/'. $tax_slug . '/' ) . '">';
 		$back .= __('Zurück', 'warth');
 		$back .= '</a>';
 	endif;
@@ -183,7 +183,7 @@ function category_back_button() {
 
 	$back = '';
 	if ( $link ) :
-		$back .= '<a class="btn_black upper push-right" href="' . esc_url( $link ). '">';
+		$back .= '<a class="btn_back upper push-right" href="' . esc_url( $link ). '">';
 		$back .= __('Zurück', 'warth');
 		$back .= '</a>';
 	endif;
