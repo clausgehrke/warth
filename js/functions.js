@@ -4,6 +4,15 @@ jQuery(document).ready(function ($) {
 	$( ".border_right" ).click( function() {
 		$( this ).height( $borderheight);
 	});*/
+
+/*	$('body').click( function() {
+		$(this).height($( window ).height());
+		$(this).css(["height", $( window ).height());]);
+	});*/
+
+
+
+
 	/*
 	 * menu interaction
 	 */
