@@ -339,4 +339,5 @@ function update_ninja_form_fields() {
  */
 if ( is_admin() ) {
 	include_once( 'functions-admin.php' );
+	include_once( 'docs.php' );
 }
