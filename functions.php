@@ -70,6 +70,9 @@ function css_enqueue() {
 	wp_register_style( 'warth', get_stylesheet_uri(), array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'warth' );
 
+	wp_register_style( 'warth-theme', CSS . '/theme.css', array(), '1.0.0', 'all' );
+	wp_enqueue_style( 'warth-theme' );
+
     if ( is_post_type_archive() || is_page() || is_tax() ) :
         wp_register_style( 'flexslidercss', CSS . '/flexslider.css', array( 'warth' ), '1.0.0', 'all' );
         wp_enqueue_style( 'flexslidercss' );
