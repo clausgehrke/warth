@@ -6,9 +6,15 @@
 get_header();
 
 // breadcrumbs
-if ( function_exists('yoast_breadcrumb') ) {
-	yoast_breadcrumb('<div class="grid"><div id="breadcrumbs" class="breadcrumbs col-1-1">','</div></div>');
-}
+if ( function_exists('make_breadcrumbs') ) :
+	echo make_breadcrumbs(
+		array(
+			__('Galerie', 'warth') => home_url( '/galerie/' ),
+
+			__('Werke', 'warth') => home_url( '/' . get_queried_object()->taxonomy . '/werke/' )
+		)
+	);
+endif;
 
 ?>
 	<div class="grid main">

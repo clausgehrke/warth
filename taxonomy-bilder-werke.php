@@ -6,9 +6,15 @@
 get_header();
 
 // breadcrumbs
-if ( function_exists('yoast_breadcrumb') ) {
-	yoast_breadcrumb('<div class="grid"><div id="breadcrumbs" class="breadcrumbs col-1-1">','</div></div>');
-}
+if ( function_exists('make_breadcrumbs') ) :
+	echo make_breadcrumbs(
+		array(
+			__('Galerie', 'warth') => home_url( '/galerie/' ),
+			__('Werke', 'warth') => home_url( '/' . get_queried_object()->taxonomy . '/' . get_queried_object()->slug . '/' ),
+			__('Lines', 'warth') => home_url( '/' . get_queried_object()->taxonomy . '/' . get_queried_object()->slug . '/lines/' )
+		)
+	);
+endif;
 
 $werke_args    = array(
 	'hide_empty' => 1,
@@ -19,7 +25,7 @@ $werke = get_categories( $werke_args );
 
 foreach ( $werke as $werk ) :
 
-	echo '<div class="grid grid-pad main">';
+	echo '<div class="grid grid-pad main gallery">';
 
 	$cat_args = array(
 		'post_type' => 'werk',

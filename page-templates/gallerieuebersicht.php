@@ -18,7 +18,7 @@ $werke = get_categories( $werke_args );
 
 foreach ( $werke as $werk ) :
 
-	echo '<div class="grid grid-pad main">';
+	echo '<div class="grid grid-pad main gallery">';
 
 	$cat_args = array(
 		'post_type' => 'werk',

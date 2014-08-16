@@ -291,6 +291,43 @@ function register_theme_widgets() {
 }
 
 /*
+ * Get page ID by slug
+ */
+function get_ID_by_slug($page_slug) {
+	$page = get_page_by_path($page_slug);
+	if ($page) :
+		return $page->ID;
+	else :
+		return null;
+	endif;
+}
+
+/*
+ * Build custom breadcrumbs
+ */
+function make_breadcrumbs( $custom_links ) {
+	$breadcrumbs = '<div class="grid">';
+	$breadcrumbs .= '<div id="breadcrumbs" class="breadcrumbs col-1-1">';
+	$breadcrumbs .= '<span prefix="v: http://rdf.data-vocabulary.org/#">';
+
+	foreach ( $custom_links as $name => $link ) :
+		$breadcrumbs .= '<span typeof="v:Breadcrumb">';
+		$breadcrumbs .= '<a href="' . $link . '" rel="v:url" property="v:title">' . $name . '</a>';
+		$breadcrumbs .= '</span>';
+
+		if ( end($custom_links) != $link ) :
+			$breadcrumbs .= '<span class="breadcrumb-divider"></span>';
+		endif;
+	endforeach;
+
+	$breadcrumbs .= '</span>';
+	$breadcrumbs .= '</div><!-- /#breadcrumbs -->';
+	$breadcrumbs .= '</div><!-- /.grid -->';
+
+	return $breadcrumbs;
+}
+
+/*
  * Register Werk ID Form Field
  */
 add_action( 'init', 'register_id_field' );

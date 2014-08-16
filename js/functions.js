@@ -1,18 +1,4 @@
 jQuery(document).ready(function ($) {
-
-	/*var $borderheight = $('.border_left').height();
-	$( ".border_right" ).click( function() {
-		$( this ).height( $borderheight);
-	});*/
-
-/*	$('body').click( function() {
-		$(this).height($( window ).height());
-		$(this).css(["height", $( window ).height());]);
-	});*/
-
-
-
-
 	/*
 	 * menu interaction
 	 */
@@ -56,7 +42,6 @@ jQuery(document).ready(function ($) {
 		$(this).parent().addClass('active');
 		$('.js_contact').attr('href', contact);
 		// loading
-		//$('.archive-postlist').after('<div class="loading"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>');
 		$('.archive-postlist').after('<div class="loading"><div class="spinner"></div></div>');
 		for ( var i = 0; i < load_content.length; i++ ) {
 			// fade out
@@ -79,5 +64,9 @@ jQuery(document).ready(function ($) {
 	 * defaults
 	 */
 	$('.archive-postlist li').first().addClass('active');
+	$('.gallery').each( function() {
+		var gallery_height = $(this).height();
+		$(this).find('.border_right').css('height', gallery_height+'px');
+	});
 
 });
