@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Warth 1.0.0\n"
-"POT-Creation-Date: 2014-08-08 14:35+0100\n"
-"PO-Revision-Date: 2014-08-08 14:37+0100\n"
+"POT-Creation-Date: 2014-08-16 17:52+0100\n"
+"PO-Revision-Date: 2014-08-16 17:54+0100\n"
 "Last-Translator: Sven Hofmann <info@hofmannsven.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -17,11 +17,28 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:14
-msgid "Weiter zur Startseite"
-msgstr ""
+#: 404.php:12
+msgid "Fehler 404"
+msgstr "Error 404"
 
-#: archive.php:69 content-werk.php:32
+#: 404.php:15
+msgid "Diese Seite ich leider nicht verfügbar."
+msgstr "This page is not available."
+
+#: 404.php:17
+msgid "Weiter zur Startseite"
+msgstr "Back to frontpage"
+
+#: archive.php:12 taxonomy-bilder-werke.php:12
+msgid "Galerie"
+msgstr "Galery"
+
+#: archive.php:14 functions.php:213 functions.php:225
+#: taxonomy-bilder-werke.php:13
+msgid "Werke"
+msgstr "Creations"
+
+#: archive.php:75 content-werk.php:32
 msgid "Kaufanfrage"
 msgstr "Request"
 
@@ -33,14 +50,94 @@ msgstr "This page has no content."
 msgid "Werkkategorie"
 msgstr "Creation category"
 
-#: functions-admin.php:47 functions-admin.php:48
+#: docs.php:12 docs.php:56 functions-admin.php:47 functions-admin.php:48
 msgid "Aktuelles"
 msgstr "News"
 
+#: docs.php:13
+msgid ""
+"Neuigkeiten können unter <a href=\"edit.php\" title=\"Aktuelles\">Aktuelles</"
+"a> geändert und ergänzt werden."
+msgstr ""
+
+#: docs.php:16 docs.php:57
+msgid "Formulare"
+msgstr "Forms"
+
+#: docs.php:17
+msgid "Jeder Seite kann über eine Metabox ein Formular zugewiesen werden."
+msgstr ""
+
+#: docs.php:18
+msgid ""
+"Die Inhalte der Formulare können unter <a href=\"admin.php?page=ninja-forms"
+"\" title=\"Formulare »&nbsp;Alle Formulare\">Formulare</a> geändert und "
+"ergänzt werden."
+msgstr ""
+
+#: docs.php:21 docs.php:58
+msgid "Videos"
+msgstr ""
+
+#: docs.php:22
+msgid ""
+"Videos können in Beiträge und Seiten per YouTube-Link eingebunden werden."
+msgstr ""
+
+#: docs.php:24
+msgid ""
+"Wird der Link in den Editor kopiert erscheint automatisch das eingebettete "
+"Video auf der Seite."
+msgstr ""
+
+#: docs.php:27 docs.php:59
+msgid "Galerien"
+msgstr "Galeries"
+
+#: docs.php:28
+msgid ""
+"Alle Werke müssen mit einer Kategorie versehen werden, um in der jeweiligen "
+"Galerie angezeigt zu werden."
+msgstr ""
+
+#: docs.php:29
+msgid ""
+"Kategorie-Beschreibungen können unter <a href=\"edit-tags.php?"
+"taxonomy=bilder&post_type=werk\" title=\"Werke »&nbsp;Kategorien"
+"\">Kategorien</a> geändert und ergänzt werden."
+msgstr ""
+
+#: docs.php:32 docs.php:60
+msgid "Server-Struktur"
+msgstr ""
+
+#: docs.php:34
+msgid "Verzeichnisse"
+msgstr ""
+
+#: docs.php:35
+msgid "Theme"
+msgstr ""
+
+#: docs.php:38
+msgid "Übersetzungen"
+msgstr ""
+
+#: docs.php:41
+msgid "Plugins"
+msgstr ""
+
+#: docs.php:44
+msgid "WordPress-Backend"
+msgstr ""
+
+#: docs.php:45
+msgid "und"
+msgstr "and"
+
 #: functions-admin.php:49
-#, fuzzy
 msgid "Beitrag hinzufügen"
-msgstr "Add creation"
+msgstr "Add post"
 
 #: functions-admin.php:80
 #, php-format
@@ -52,111 +149,107 @@ msgstr " <a href=\"%s\" target=\"_blank\">Sven Hofmann</a>"
 msgid " <a href=\"%s\" target=\"_blank\">Claus Gehrke</a>"
 msgstr " <a href=\"%s\" target=\"_blank\">Claus Gehrke</a>"
 
-#: functions.php:52
+#: functions.php:62
 msgid "Hauptnavigation"
 msgstr "Main navigation"
 
-#: functions.php:137
+#: functions.php:167 functions.php:190
 msgid "Zurück"
 msgstr "Back"
 
-#: functions.php:160 functions.php:172
-msgid "Werke"
-msgstr "Creations"
-
-#: functions.php:161
+#: functions.php:214
 msgid "Werk"
 msgstr "Creation"
 
-#: functions.php:162
+#: functions.php:215
 msgid "Werk hinzufügen"
 msgstr "Add creation"
 
-#: functions.php:163 functions.php:165
+#: functions.php:216 functions.php:218
 msgid "Neues Werk hinzufügen"
 msgstr "Add new creation"
 
-#: functions.php:164
+#: functions.php:217
 msgid "Werk bearbeiten"
 msgstr "Edit creation"
 
-#: functions.php:166
+#: functions.php:219
 msgid "Alle Werke"
 msgstr "All creations"
 
-#: functions.php:167
+#: functions.php:220
 msgid "Werke ansehen"
 msgstr "View creation"
 
-#: functions.php:168
+#: functions.php:221
 msgid "Werke durchsuchen"
 msgstr "Search creation"
 
-#: functions.php:169
+#: functions.php:222
 msgid "Keine Werke gefunden"
 msgstr "No creations found"
 
-#: functions.php:170
+#: functions.php:223
 msgid "Keine Werke im Papierkorb"
 msgstr "No creation found in trash"
 
-#: functions.php:197 functions.php:207
+#: functions.php:250 functions.php:260
 msgid "Kategorien"
 msgstr "Categories"
 
-#: functions.php:198
+#: functions.php:251
 msgid "Kategorie"
 msgstr "Category"
 
-#: functions.php:199
+#: functions.php:252
 msgid "Kategorien durchsuchen"
 msgstr "Search category"
 
-#: functions.php:200
+#: functions.php:253
 msgid "Alle Kategorien"
 msgstr "All categories"
 
-#: functions.php:201
+#: functions.php:254
 msgid "Übergeordnete Kategorien"
 msgstr "Parent categories"
 
-#: functions.php:202
+#: functions.php:255
 msgid "Übergeordnete Kategorien:"
 msgstr "Parent categories:"
 
-#: functions.php:203
+#: functions.php:256
 msgid "Kategorie bearbeiten"
 msgstr "Edit category"
 
-#: functions.php:204
+#: functions.php:257
 msgid "Kategorie aktualisieren"
 msgstr "Update category"
 
-#: functions.php:205
+#: functions.php:258
 msgid "Neue Kategorie hinzufügen"
 msgstr "Add new category"
 
-#: functions.php:206
+#: functions.php:259
 msgid "Neuer Kategoriename"
 msgstr "New category name"
 
-#: functions.php:268
+#: functions.php:359
 msgid "durch Kaufanfrage automatisch ausgewählt."
 msgstr "selected automatically by purchase request."
 
-#: functions.php:282
+#: functions.php:374
 msgid "Anfrage für Bild"
 msgstr "Request for Image"
 
-#: header.php:39
-msgid "English"
-msgstr ""
+#: functions.php:384
+msgid "Mit * gekennzeichnete Felder müssen ausgefüllt werden."
+msgstr "Fields with * are required."
 
-#: header.php:40
+#: header.php:35 header.php:36
 msgid "Englisch"
 msgstr "English"
 
-#: header.php:45 header.php:46
+#: header.php:41 header.php:42
 msgid "Deutsch"
 msgstr "German"
 
@@ -168,77 +261,98 @@ msgstr "Category-Overview"
 msgid "Eltern-Kategorie"
 msgstr "Parent category"
 
-#: inc/custom_meta_boxes.php:45
-msgid "SLIDER"
+#: inc/custom_meta_boxes.php:47
+msgid "Slider"
 msgstr "Slider"
 
-#: inc/custom_meta_boxes.php:52
+#: inc/custom_meta_boxes.php:54
 msgid "Slider anzeigen"
 msgstr "Display slider"
 
-#: inc/custom_meta_boxes.php:58
+#: inc/custom_meta_boxes.php:60
 msgid "Slider Bilder max. 5"
 msgstr "Slider images max. 5"
 
-#: inc/custom_meta_boxes.php:64
+#: inc/custom_meta_boxes.php:66
 msgid "Rahmen für Slider"
 msgstr "Frame for slider"
 
-#: inc/custom_meta_boxes.php:78
+#: inc/custom_meta_boxes.php:80
 msgid "Teaser"
 msgstr "Teaser"
 
-#: inc/custom_meta_boxes.php:85
+#: inc/custom_meta_boxes.php:87
 msgid "Teaser anzeigen"
 msgstr "Display teaser"
 
-#: inc/custom_meta_boxes.php:87
+#: inc/custom_meta_boxes.php:89
 msgid ""
 "Die Standard-Teaser können im Bereich <a href=\"widgets.php\">Widgets</a> "
 "verwaltet werden."
 msgstr "Manage Teaser in the <a href=\"widgets.php\">Widgets</a> area."
 
-#: inc/custom_meta_boxes.php:100
+#: inc/custom_meta_boxes.php:102
 msgid "Katalog Download"
 msgstr "Catalog download"
 
-#: inc/custom_meta_boxes.php:110
+#: inc/custom_meta_boxes.php:112
 msgid "Download Button anzeigen"
 msgstr "Display download button"
 
-#: inc/custom_meta_boxes.php:116
+#: inc/custom_meta_boxes.php:118
 msgid "File Upload"
 msgstr "Upload"
 
-#: inc/teaser_widget.php:78
+#: inc/teaser_widget.php:16
+msgid "Dieses Widget auswählen, um einen neuen Teaser im Footer anzulegen."
+msgstr ""
+
+#: inc/teaser_widget.php:47 page-templates/gallerieuebersicht.php:76
+#: taxonomy-bilder-werke.php:83
+msgid "Mehr"
+msgstr "More"
+
+#: inc/teaser_widget.php:73
 msgid "Überschrift:"
 msgstr "Title:"
 
-#: inc/teaser_widget.php:83
+#: inc/teaser_widget.php:78
 msgid "Link:"
 msgstr "Link:"
 
-#: inc/teaser_widget.php:88
-msgid "Weiterlesen:"
-msgstr "Read More:"
-
 #: inc/teaser_widget.php:93
-msgid "Bild-ID: "
+msgid "Bild-ID:"
 msgstr "Image-ID:"
 
-#: page-templates/gallerieuebersicht.php:75
-#: page-templates/galleriewerke.php:82
-msgid "Mehr"
-msgstr "More"
+#: page-templates/kontakt-template.php:36
+msgid ""
+"Der Katalog von 2007 \"reduced pictures\" kann als PDF heruntergeladen "
+"werden."
+msgstr "You can download the catalog from 2007 \"reduced pictures\" as PDF."
+
+#: page-templates/kontakt-template.php:37
+msgid "Download Katalog"
+msgstr "Download Catalog"
+
+#: page-templates/kontakt-template.php:39
+msgid "Download"
+msgstr "Download"
+
+#: taxonomy-bilder-werke.php:14
+msgid "Lines"
+msgstr "Lines"
+
+#~ msgid "SLIDER"
+#~ msgstr "Slider"
+
+#~ msgid "Weiterlesen:"
+#~ msgstr "Read More:"
 
 #~ msgid "Warth"
 #~ msgstr "Warth"
 
 #~ msgid "warth-art.com"
 #~ msgstr "warth-art.com"
-
-#~ msgid "Formate"
-#~ msgstr "Container"
 
 #~ msgid "Format"
 #~ msgstr "Container"

@@ -70,6 +70,9 @@ function css_enqueue() {
 	wp_register_style( 'warth', get_stylesheet_uri(), array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'warth' );
 
+	wp_register_style( 'warth-theme', CSS . '/theme.css', array(), '1.0.0', 'all' );
+	wp_enqueue_style( 'warth-theme' );
+
     if ( is_post_type_archive() || is_page() || is_tax() ) :
         wp_register_style( 'flexslidercss', CSS . '/flexslider.css', array( 'warth' ), '1.0.0', 'all' );
         wp_enqueue_style( 'flexslidercss' );
@@ -288,6 +291,43 @@ function register_theme_widgets() {
 }
 
 /*
+ * Get page ID by slug
+ */
+function get_ID_by_slug($page_slug) {
+	$page = get_page_by_path($page_slug);
+	if ($page) :
+		return $page->ID;
+	else :
+		return null;
+	endif;
+}
+
+/*
+ * Build custom breadcrumbs
+ */
+function make_breadcrumbs( $custom_links ) {
+	$breadcrumbs = '<div class="grid">';
+	$breadcrumbs .= '<div id="breadcrumbs" class="breadcrumbs col-1-1">';
+	$breadcrumbs .= '<span prefix="v: http://rdf.data-vocabulary.org/#">';
+
+	foreach ( $custom_links as $name => $link ) :
+		$breadcrumbs .= '<span typeof="v:Breadcrumb">';
+		$breadcrumbs .= '<a href="' . $link . '" rel="v:url" property="v:title">' . $name . '</a>';
+		$breadcrumbs .= '</span>';
+
+		if ( end($custom_links) != $link ) :
+			$breadcrumbs .= '<span class="breadcrumb-divider"></span>';
+		endif;
+	endforeach;
+
+	$breadcrumbs .= '</span>';
+	$breadcrumbs .= '</div><!-- /#breadcrumbs -->';
+	$breadcrumbs .= '</div><!-- /.grid -->';
+
+	return $breadcrumbs;
+}
+
+/*
  * Register Werk ID Form Field
  */
 add_action( 'init', 'register_id_field' );
@@ -312,11 +352,13 @@ function collect_werk_id( $field_id, $data ) {
 	if ( $id ) : // check for id
 		$name = get_the_title( $id );
 		if ( $name ) : // check for existing post
-			echo '<label>';
-			echo '<input type="checkbox" name="ninja_forms_field_' . $field_id . '" value="' . $name . '">';
+			echo '<label class="custom-werk-id">';
+			echo '<input type="checkbox" name="ninja_forms_field_' . $field_id . '" value="' . $name . '" checked="checked">';
 			echo '<a href="' . get_permalink( $id ) . '">' . $name . '</a><br />';
+			echo '<div class="custom-werk-desc">';
 			_e('durch Kaufanfrage automatisch ausgewählt.', 'warth');
-            echo '</label>';
+            echo '</div>';
+			echo '</label>';
 		endif;
 		add_action( 'wp_footer', 'update_ninja_form_fields', 99 );
 	endif;
@@ -335,8 +377,17 @@ function update_ninja_form_fields() {
 }
 
 /*
+ * Default content after forms
+ */
+add_action( 'ninja_forms_display_after_form', 'my_custom_function' );
+function my_custom_function( $form_id ) {
+	echo '<p class="required-info">' . __('Mit * gekennzeichnete Felder müssen ausgefüllt werden.', 'warth') . '</p>';
+}
+
+/*
  * Load admin functions
  */
 if ( is_admin() ) {
 	include_once( 'functions-admin.php' );
+	include_once( 'docs.php' );
 }
