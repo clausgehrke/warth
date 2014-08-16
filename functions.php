@@ -352,11 +352,13 @@ function collect_werk_id( $field_id, $data ) {
 	if ( $id ) : // check for id
 		$name = get_the_title( $id );
 		if ( $name ) : // check for existing post
-			echo '<label>';
-			echo '<input type="checkbox" name="ninja_forms_field_' . $field_id . '" value="' . $name . '">';
+			echo '<label class="custom-werk-id">';
+			echo '<input type="checkbox" name="ninja_forms_field_' . $field_id . '" value="' . $name . '" checked="checked">';
 			echo '<a href="' . get_permalink( $id ) . '">' . $name . '</a><br />';
+			echo '<div class="custom-werk-desc">';
 			_e('durch Kaufanfrage automatisch ausgewählt.', 'warth');
-            echo '</label>';
+            echo '</div>';
+			echo '</label>';
 		endif;
 		add_action( 'wp_footer', 'update_ninja_form_fields', 99 );
 	endif;
@@ -372,6 +374,14 @@ function update_ninja_form_fields() {
 	$js .= "$('.ninja-forms-form').find('textarea').val('" . __('Anfrage für Bild', 'warth') . " \"" . $name . "\"');";
 	$js .= '</script>';
 	echo $js;
+}
+
+/*
+ * Default content after forms
+ */
+add_action( 'ninja_forms_display_after_form', 'my_custom_function' );
+function my_custom_function( $form_id ) {
+	echo '<p class="required-info">' . __('Mit * gekennzeichnete Felder müssen ausgefüllt werden.', 'warth') . '</p>';
 }
 
 /*

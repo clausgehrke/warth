@@ -1,7 +1,6 @@
 /*!
  * WordPress Theme Styles: Warth
  */
-
 @font-face {
 	font-family: 'warthicon';
 	src: url('../fonts/warthicon.eot');
@@ -258,7 +257,7 @@ body {
 		padding-right:0px
 	}
 }
-/*end simple grid*/
+/* end simple grid */
 iframe {
 	width: 100%;
 }
@@ -418,7 +417,7 @@ body {
 	font-family: 'Lato';
 	font-weight:  400;
 }
-/*transition fast, medium, slow*/
+/* transition fast, medium, slow */
 .trans-f{
 	-webkit-transition: all 0.2s ease-in;
 	-moz-transition: all 0.2s ease-in;
@@ -451,8 +450,8 @@ body {
 	height: auto;
 	margin-top: 10px;
 }
-/*HEADER u. SLIDER*/
-.flexslider {
+/* HEADER u. SLIDER */
+.gall {
 	height: 365px;
 }
 .slider.grid {
@@ -463,7 +462,6 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
 .slider {
 	margin-bottom: 50px;
 }
@@ -479,7 +477,6 @@ body {
 .grid.grid-pad.main{
 	padding: 0;
 }
-
 .main p {
 	font-size: 1.4em;
 	font-weight:300;
@@ -500,7 +497,7 @@ body {
 	height: auto;
 	padding-bottom:10px;
 }
-/*Red-Content-Borders*/
+/* Red-Content-Borders */
 .border_left{
 	min-height:85px;
 	padding-left: 2px;
@@ -551,7 +548,7 @@ body {
 	margin-right: 2%;
 	padding-right: 0;
 }
-/*FOOTER*/
+/* FOOTER */
 .footer {
 	width: 100%;
 	height: 105px;
@@ -577,8 +574,8 @@ body {
 .impressum a:hover{
 	color: #d70000;
 }
-/* NAVIGATION */
 
+/* NAVIGATION */
 .mainnav.col-1-1{
 	padding-right: 0px;
 }
@@ -586,7 +583,6 @@ nav {
 	float: right;
 	margin-bottom: 10px;
 }
-/*von tut*/
 .mainnav nav{
 	min-height: 40px;
 }
@@ -637,7 +633,7 @@ nav ul {
 	z-index: 9999;
 }
 
-/*Navigation*/
+/* Navigation */
 ul.sub-menu  {
 	display: none;
 	position: absolute;
@@ -676,8 +672,8 @@ nav ul li:hover > ul {
 }
 .mobilnav .current-menu-item a,
 .mobilnav a:hover{
-	background-color: #000000;
-	color: #ffffff;
+	background-color: #000;
+	color: #fff;
 }
 .mobilnav nav{
 	float: left;
@@ -697,8 +693,8 @@ nav ul li:hover > ul {
 }
 .mainnav .current-menu-item a,
 .mainnav a:hover{
-	background-color: #000000;
-	color: #ffffff;
+	background-color: #000;
+	color: #fff;
 }
 
 /* META MENU */
@@ -740,7 +736,7 @@ nav a,
 	margin-top:10px;
 }
 
-/* yoast breadcrumbs */
+/* breadcrumbs */
 .breadcrumbs {
 	padding: 10px;
 	text-transform: uppercase;
@@ -771,8 +767,6 @@ nav a,
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Navigation styling */
-
 /* BUTTONS */
 .btn_red,
 input[type='submit'],
@@ -795,10 +789,19 @@ a.btn_grey {
 .btn_back {
 	margin-top: 10px;
 	padding: 10px;
+	background-color: #e7e7e7;
+	color: #260000;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.btn_back:hover {
 	background-color: #000;
 	color: #fff;
 }
-.btn-back{
+.btn-back {
 	padding: 10px 15px;
 	position: relative;
 	float: right;
@@ -815,6 +818,7 @@ a.btn-teaser{
 	bottom: 20px;
 	right: 20px;
 }
+
 /* Bildergallerie uebersicht */
 .galimg{
 	padding-top: 40px;
@@ -851,7 +855,6 @@ a.btn-teaser{
 .galslider a:last-of-type{
 	background: url(../img/uislider2.png) no-repeat center;
 }
-
 .kontakt-img{
 	line-height: 0;
 	padding: 0;
@@ -860,12 +863,18 @@ a.btn-teaser{
 	width: 100%;
 	padding: 0;
 	margin: 0;
-
+}
+.gallery {
+	position: relative;
+}
+.gallery .btn_red.btn-cont-text {
+	position: absolute;
+	right: 25px;
+	bottom: 25px;
 }
 .resp-pad{
 	padding: 50px 20px 50px 50px;
 }
-/*FORMULAR TODO:  Formular Styling*/
 .pad-grid {
 	padding: 30px 0 0 30px;
 }
@@ -874,41 +883,37 @@ a.btn-teaser{
 .pad-grid .pad-grid {
 	padding: 0 0 0 30px;
 }
-
 .pad-grid [class*='col-'] {
 	padding-right: 20px;
 }
-
 .pad-grid textarea,
 .pad-grid input {
 	width: 100%;
 }
-
 .section-kontakt .caps {
 	font-size: 1.25em;
 }
 
 /* Formular */
-
 input,
 textarea {
 	background-color:   #fff;
 	color:              #2d2d2d;
 	border:             none;
 	margin:             0;
-	/*float:              left;*/
 	-webkit-transition: 0.5s;
 	-moz-transition:    0.5s;
 	transition:         0.5s;
 	font-size:          1.15em;
 	line-height:        1.25;
 }
+input:visited,
 input {
-	padding: 5px 10px;
-	height:  40px;
-	border:solid 1px #bfbfbf;
-	box-shadow: 0 0 0px 0px #000;
+	padding: 3px 10px;
+	height: 40px;
+	border: solid 1px #bfbfbf;
 	-webkit-box-shadow: 0 0 0 0 #000;
+	box-shadow: 0 0 0 0 #000;
 }
 textarea {
 	padding: 5px 10px;
@@ -925,11 +930,9 @@ textarea:focus {
 	-webkit-box-shadow: 0 0 1px 1px #000;
 	box-shadow: 0 0 1px 1px #000;
 }
-
 input[type="submit"]:active,
 input[type="submit"]:focus{
 	background-color: #d76666;
-
 }
 .form-legend {
 	font-size: 1.75em;
@@ -939,17 +942,52 @@ input[type="submit"]:focus{
 	padding: 10px 0 5px;
 	color:   #252525;
 }
-/*lable katalog*/
-.field-wrap.label-left label{
-	display: inline-block !important;
-	width:20% !important;
+p.required-info {
+	font-size: 1em;
+	color: #d70000;
+	opacity: .5;
+	padding: 25px 0;
 }
-.ninja-forms-field.katalog{
-	width:40% !important;
+
+/* lable katalog */
+input[type="text"].ninja-forms-field {
+	width: 50% !important;
+}
+textarea.ninja-forms-field {
+	width: 75% !important;
+}
+.field-wrap.label-left label {
+	float: left !important;
+	width: 20% !important;
+	margin-top: 3px;
+}
+.custom-werk-id {
+	float: left;
+}
+.custom-werk-id {
+	margin-left: 21.25%;
+}
+.custom-werk-desc {
+	padding-left: 40px;
+}
+.custom-werk-id a {
+	text-transform: uppercase;
+}
+.download-button {
+	float: right;
+}
+.download-area {
+	padding-bottom: 75px;
+}
+.ninja-forms-field.contact-submit {
+	float: right !important;
+}
+.ninja-forms-field.katalog {
+	width: 40% !important;
 	display: inline-block !important;
 }
 .ninja-forms-form-wrap input[type="checkbox"] {
-	margin-right:   15px;
+	margin-right: 15px;
 	float:          none;
 	vertical-align: middle;
 	width:          25px;
@@ -988,7 +1026,7 @@ input[type="checkbox"]:checked + label.checkbox {
 .form-element label.checkbox {
 	padding: 0;
 }
-.ninja-forms-field-error p{
+.ninja-forms-field-error p {
 	color:#d70000;
 	font-size: 16px;
 }
@@ -1003,8 +1041,7 @@ input[type="checkbox"]:checked + label.checkbox {
 	width: 60% !important;
 }
 
-/* == WordPress WYSIWYG Editor Styles == */
-
+/* WordPress WYSIWYG Editor Styles */
 .entry-content img {
 	margin: 0 0 1.5em 0;
 }
@@ -1023,9 +1060,6 @@ input[type="checkbox"]:checked + label.checkbox {
 	margin-left: auto;
 	display: block;
 	clear: both;
-}
-.alignnone, img.alignnone {
-	/* not sure about this one */
 }
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -1102,7 +1136,7 @@ blockquote.right {
 	.resp-pad{
 		padding: 10px;
 	}
-	/*lable katalog*/
+	/* lable katalog */
 	.field-wrap.label-left label{
 		display: block !important;
 		width:100% !important;
@@ -1111,7 +1145,7 @@ blockquote.right {
 		width:100% !important;
 		display: block !important;
 	}
-	.flexslider {
+	.gall {
 		height: auto;
 	}
 }
@@ -1169,22 +1203,20 @@ blockquote.right {
 	-webkit-animation: rotateplane 1.2s infinite ease-in-out;
 	animation: rotateplane 1.2s infinite ease-in-out;
 }
-
 @-webkit-keyframes rotateplane {
 	0% { -webkit-transform: perspective(120px) }
 	50% { -webkit-transform: perspective(120px) rotateY(180deg) }
 	100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
 }
-
 @keyframes rotateplane {
 	0% {
 		transform: perspective(120px) rotateX(0deg) rotateY(0deg);
 		-webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
 	} 50% {
-		  transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-		  -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-	  } 100% {
-			transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-			-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-		}
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+		-webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+	} 100% {
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+		-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+	}
 }
