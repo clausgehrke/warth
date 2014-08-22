@@ -135,25 +135,24 @@ body{
 :before {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	box-sizing: border-box
+	box-sizing: border-box;
 }
 body {
-	margin: 0
+	margin: 0;
 }
 .content {
 	padding: 10px 30px;
     overflow: auto;
 }
 [class*=col-] {
-	float:left;
-	padding-right:20px
+	float: left;
+	padding-right: 20px;
 }
 [class*=col-]:last-of-type {
 	padding-right: 0
 }
 .grid {
 	width: 100%;
-	/*max-width: 1140px;*/
 	max-width: 940px;
 	min-width: 755px;
 	margin: 0 auto;
