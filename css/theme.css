@@ -142,6 +142,7 @@ body {
 }
 .content {
 	padding: 10px 30px;
+    overflow: auto;
 }
 [class*=col-] {
 	float:left;
