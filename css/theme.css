@@ -1096,6 +1096,9 @@ blockquote.right {
 }
 /* Responsive */
 @media handheld, only screen and (max-width: 767px){
+    .header img {
+        padding-left: 20px;
+    }
 	.teaser [class*=col-] {
 		width: auto;
 		float: none;
@@ -1148,6 +1151,21 @@ blockquote.right {
 	.gall {
 		height: auto;
 	}
+    .footer {
+        padding-left: 20px;
+    }
+    .impressum {
+        margin-top: 10px;
+        float: left;
+        text-align: left;
+    }
+    /* ninja */
+    .field-wrap.label-left .ninja-forms-field,
+    .field-wrap.label-left .ninja-forms-star-rating-control {
+        margin-top: 5px !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
 }
 
 /* language switcher */
