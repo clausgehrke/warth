@@ -385,6 +385,31 @@ function my_custom_function( $form_id ) {
 }
 
 /*
+ * Translate labels
+ */
+function translate_ninja_labels( $data, $field_id ){
+    $data['label'] = __($data['label'], 'warth');
+    return $data;
+}
+add_filter( 'ninja_forms_field', 'translate_ninja_labels', 10, 2 );
+
+/*
+ * Make labels available for translation
+ */
+array(
+    __('Vorname', 'warth'),
+    __('Nachname', 'warth'),
+    __('Straße, Nr.', 'warth'),
+    __('Postleitzahl, Ort', 'warth'),
+    __('Land', 'warth'),
+    __('Email', 'warth'),
+    __('Textfeld für Anfrage', 'warth'),
+    __('Textfeld', 'warth'),
+    __('Anfrage Absenden', 'warth'),
+    __('Katalog Anfordern', 'warth')
+);
+
+/*
  * Load admin functions
  */
 if ( is_admin() ) {
