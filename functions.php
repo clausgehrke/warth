@@ -300,7 +300,7 @@ function get_ID_by_slug($page_slug) {
  */
 function make_breadcrumbs( $custom_links ) {
 	$breadcrumbs = '<div class="grid">';
-	$breadcrumbs .= '<div id="breadcrumbs" class="breadcrumbs col-1-1 resp-pad">';
+	$breadcrumbs .= '<div id="breadcrumbs" class="breadcrumbs col-1-1 resp-border">';
 	$breadcrumbs .= '<span prefix="v: http://rdf.data-vocabulary.org/#">';
 
 	foreach ( $custom_links as $name => $link ) :

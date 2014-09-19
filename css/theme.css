@@ -1136,7 +1136,8 @@ blockquote.right {
 	.list-dropdown-wrap.label-below select {
 		width: 100% !important;
 	}
-	.resp-pad{
+	.resp-pad,
+    .resp-border{
 		padding: 10px;
 	}
 	/* lable katalog */
