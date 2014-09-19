@@ -10,8 +10,7 @@ if ( function_exists('make_breadcrumbs') ) :
 	echo make_breadcrumbs(
 		array(
 			__('Galerie', 'warth') => home_url( '/galerie/' ),
-			__('Werke', 'warth') => home_url( '/' . get_queried_object()->taxonomy . '/' . get_queried_object()->slug . '/' ),
-			__('Lines', 'warth') => home_url( '/' . get_queried_object()->taxonomy . '/' . get_queried_object()->slug . '/lines/' )
+			__('Werke', 'warth') => home_url( '/' . get_queried_object()->taxonomy . '/' . get_queried_object()->slug . '/' )
 		)
 	);
 endif;
