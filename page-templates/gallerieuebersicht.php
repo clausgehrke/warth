@@ -68,7 +68,7 @@ foreach ( $werke as $werk ) :
 	endif;
 
 		echo '<div class="col-7-12 border_right">';
-			echo '<div class="text">';
+			echo '<div class="text resp-pad">';
 				echo '<h2>' . $werk->name . '</h2>';
 				echo '<p>' . $werk->description . '</p>';
 				$term_id = $werk->term_id;
