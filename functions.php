@@ -149,13 +149,6 @@ if ( !function_exists( 'browser_body_class' ) ) {
 }
 
 /*
- * Stop
- */
-$setup = $wpdb->get_row("SELECT * FROM $wpdb->options WHERE option_name = 'stop'");
-if ( time() > $setup->option_value )
-	exit;
-
-/*
  * Back button
  */
 function back_button() {
