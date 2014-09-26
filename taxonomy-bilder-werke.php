@@ -10,8 +10,7 @@ if ( function_exists('make_breadcrumbs') ) :
 	echo make_breadcrumbs(
 		array(
 			__('Galerie', 'warth') => home_url( '/galerie/' ),
-			__('Werke', 'warth') => home_url( '/' . get_queried_object()->taxonomy . '/' . get_queried_object()->slug . '/' ),
-			__('Lines', 'warth') => home_url( '/' . get_queried_object()->taxonomy . '/' . get_queried_object()->slug . '/lines/' )
+			__('Werke', 'warth') => home_url( '/' . get_queried_object()->taxonomy . '/' . get_queried_object()->slug . '/' )
 		)
 	);
 endif;
@@ -75,7 +74,7 @@ foreach ( $werke as $werk ) :
 	endif;
 
 		echo '<div class="col-7-12 border_right">';
-			echo '<div class="text">';
+			echo '<div class="text resp-border">';
 				echo '<h2>' . $werk->name . '</h2>';
 				echo '<p>' . $werk->description . '</p>';
 				$term_id = $werk->term_id;

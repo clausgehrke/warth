@@ -529,6 +529,7 @@ body {
 }
 .teaser img {
 	width: 100%;
+    height: auto;
 	z-index: 99;
 }
 .teaser {
@@ -541,13 +542,13 @@ body {
 .teaser .col-4-12 {
 	width: 32%;
 	position: relative;
-	max-height: 280px;
 }
 .teaser [class*=col-] {
 	float: left;
 	margin-right: 2%;
 	padding-right: 0;
 }
+
 /* FOOTER */
 .footer {
 	width: 100%;
@@ -1136,7 +1137,8 @@ blockquote.right {
 	.list-dropdown-wrap.label-below select {
 		width: 100% !important;
 	}
-	.resp-pad{
+	.resp-pad,
+    .resp-border{
 		padding: 10px;
 	}
 	/* lable katalog */
